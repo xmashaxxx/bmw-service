@@ -1,0 +1,771 @@
+/* ============================================
+   BMW SERVICE MIAMI — REDESIGN
+   Premium dark cinematic automotive aesthetic
+   ============================================ */
+
+/* --- RESET & BASE --- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #000000;
+  --bg-card: #0a0a0a;
+  --text: #e8e8e8;
+  --text-muted: #888;
+  --red: #c0392b;
+  --red-bright: #e74c3c;
+  --amber: #b8560f;
+  --amber-light: #d4781a;
+  --gold: #c9a84c;
+  --border: rgba(255,255,255,0.15);
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--text); text-decoration: none; transition: color 0.3s; }
+a:hover { color: var(--red-bright); }
+
+/* --- PAGE LOADER --- */
+#page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s;
+}
+#page-loader.loaded { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader-brand {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+.loader-track {
+  width: 200px;
+  height: 2px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.loader-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--red);
+  animation: loaderFill 1.5s ease forwards;
+}
+@keyframes loaderFill { to { width: 100%; } }
+
+/* --- NAVIGATION --- */
+#navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.5rem 3rem;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+.nav-logo-img {
+  height: 36px;
+  width: auto;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  align-items: center;
+}
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.3s;
+  position: relative;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: #fff;
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--red);
+}
+.nav-line {
+  margin-top: 0.8rem;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 200;
+}
+.hamburger span {
+  width: 24px;
+  height: 1.5px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+/* --- HERO --- */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* All 3 layers share the same container and sizing */
+.hero-layer-bg,
+.hero-layer-car {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* LAYER 1: Full original photo */
+.hero-layer-bg {
+  z-index: 1;
+}
+.hero-bg-photo,
+.hero-car-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+/* LAYER 2: Curved text between the two images */
+.hero-layer-text {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.hero-svg-top {
+  width: clamp(700px, 85vw, 1200px);
+  height: auto;
+  overflow: visible;
+  margin-bottom: -8rem;
+}
+.hero-svg-bmw {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 320px;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+/* LAYER 3: Transparent car cutout — EXACT same sizing as bg photo */
+.hero-layer-car {
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Fade to black at bottom */
+.hero-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 250px;
+  background: linear-gradient(to bottom, transparent, #000);
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* --- HERO INTRO (Service Miami + desc between hero & services) --- */
+.hero-intro {
+  background: #000;
+  text-align: center;
+  padding: 0 2rem 4rem;
+  margin-top: -4rem;
+  position: relative;
+  z-index: 5;
+}
+.hero-intro-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #d4781a;
+  margin-bottom: 1.5rem;
+}
+.hero-intro-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.55);
+  max-width: 520px;
+  margin: 0 auto 1.2rem;
+}
+.hero-intro-meta {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+/* --- SERVICES SECTION --- */
+.services-section {
+  position: relative;
+  background: #000;
+  padding-bottom: 6rem;
+}
+
+/* Blurred background */
+.services-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+.services-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: blur(40px) brightness(0.3);
+  transform: scale(1.2);
+  opacity: 0.5;
+}
+.services-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.3) 0%,
+    rgba(139, 26, 26, 0.15) 40%,
+    rgba(0,0,0,0.95) 100%
+  );
+}
+
+/* Sticky wrapper */
+.services-sticky-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.services-box {
+  position: sticky;
+  top: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+}
+
+/* Car image inside box */
+.services-box-car {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.services-car-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.services-title {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 2rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+}
+
+/* Service rows */
+.services-list {
+  padding: 0.5rem 0;
+  overflow: hidden;
+}
+
+.service-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.3s;
+}
+.service-row:hover {
+  background: rgba(192, 57, 43, 0.06);
+}
+
+.service-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex: 1;
+}
+.service-num {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  min-width: 24px;
+  padding-top: 2px;
+}
+.service-info h3 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+  color: #fff;
+}
+.service-info p {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.5;
+  max-width: 440px;
+}
+
+.service-sticker {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 0.85;
+  margin-right: -2rem;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.service-row:hover .service-sticker {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* View all button */
+.services-end {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding-top: 3rem;
+}
+.btn-subtle {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.8rem 2rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.btn-subtle:hover {
+  color: #fff;
+  border-color: var(--red);
+  background: rgba(192, 57, 43, 0.1);
+}
+
+/* --- REVIEWS --- */
+.reviews-section {
+  background: #000;
+  padding: 5rem 0 2rem;
+  overflow: hidden;
+}
+
+.reviews-scroller {
+  overflow: hidden;
+  width: 100%;
+}
+
+.reviews-track {
+  display: flex;
+  gap: 1.5rem;
+  animation: reviewsScroll 40s linear infinite;
+  width: max-content;
+}
+.reviews-track:hover { animation-play-state: paused; }
+
+@keyframes reviewsScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.review-card {
+  flex-shrink: 0;
+  width: 340px;
+  padding: 1.8rem;
+  border: 1px solid rgba(192, 57, 43, 0.3);
+  border-radius: 4px;
+  background: rgba(10, 10, 10, 0.8);
+  transition: border-color 0.3s;
+}
+.review-card:hover {
+  border-color: var(--red);
+}
+.review-stars {
+  color: var(--red-bright);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+.review-card p {
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+}
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.review-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(192, 57, 43, 0.2);
+  border: 1px solid rgba(192, 57, 43, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--red-bright);
+}
+.review-author div {
+  display: flex;
+  flex-direction: column;
+}
+.review-author strong {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #fff;
+}
+.review-author span:not(.review-avatar) {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.reviews-badge {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.68rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+}
+
+/* --- BOTTOM SECTION (MAP + HOURS + CONTACT) --- */
+.bottom-section {
+  background: #000;
+  padding: 5rem 3rem;
+  border-top: 1px solid var(--border);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Row 1: Map + Hours */
+.bottom-top-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  margin-bottom: 2.5rem;
+}
+
+/* Map */
+.bottom-map {
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+.bottom-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(0.3) brightness(0.85);
+}
+
+/* Hours */
+.bottom-hours table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.bottom-hours td {
+  font-size: 0.85rem;
+  font-weight: 300;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.bottom-hours td:first-child {
+  color: var(--text-muted);
+  text-align: left;
+}
+.bottom-hours td:last-child {
+  text-align: right;
+  color: var(--text);
+}
+.bottom-hours tr.closed td {
+  color: rgba(192, 57, 43, 0.6);
+}
+
+/* Row 2: Contact box */
+.bottom-contact-box {
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  padding: 2rem 2.5rem;
+}
+
+/* Contact line rows with horizontal rule */
+.contact-line-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.contact-line-row:last-of-type {
+  border-bottom: none;
+}
+.contact-line-label {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.contact-line-rule {
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.18);
+  min-width: 40px;
+}
+.contact-line-value {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text);
+  flex-shrink: 0;
+}
+a.contact-line-value:hover {
+  color: var(--red-bright);
+}
+
+/* Contact box footer: socials + button */
+.bottom-contact-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Socials */
+.bottom-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.bottom-socials a {
+  font-size: 0.78rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+.bottom-socials a:hover { color: var(--red-bright); }
+.bottom-socials .dot { color: rgba(255,255,255,0.15); }
+
+/* Appointment button */
+.btn-appointment {
+  display: inline-block;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--red);
+  padding: 1rem 2rem;
+  border: 1px solid var(--red);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.btn-appointment:hover {
+  background: transparent;
+  color: var(--red-bright);
+}
+
+/* --- FOOTER --- */
+footer {
+  background: #000;
+  border-top: 1px solid var(--border);
+  padding: 2rem 3rem;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-inner span {
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+.footer-credit {
+  color: rgba(255,255,255,0.2);
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+
+  /* Nav */
+  #navbar { padding: 1rem 1.5rem; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.97);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 150;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 1rem; }
+  .hamburger { display: flex; }
+
+  /* Hero */
+  .hero-svg-top { width: 98vw; margin-bottom: -4rem; }
+  .hero-svg-bmw { font-size: 180px; }
+  .hero-intro-title { font-size: 2rem; }
+  .hero-desc { font-size: 0.85rem; }
+
+  /* Services */
+  .services-box {
+    margin: 0 1rem;
+    border-radius: 4px;
+  }
+  .service-row {
+    padding: 1rem 1.2rem;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .service-info { gap: 1rem; }
+  .service-sticker { width: 100px; margin-right: -1.2rem; }
+  .services-title { font-size: 1.5rem; left: 1.2rem; }
+
+  /* Reviews */
+  .review-card { width: 280px; padding: 1.4rem; }
+
+  /* Bottom */
+  .bottom-section { padding: 3rem 1.5rem; }
+  .bottom-top-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .bottom-map { aspect-ratio: 16/10; }
+  .bottom-contact-box { padding: 1.5rem; }
+  .contact-line-row {
+    flex-wrap: wrap;
+  }
+  .contact-line-rule {
+    display: none;
+  }
+  .contact-line-label {
+    width: 100%;
+    margin-bottom: 0.3rem;
+  }
+  .contact-line-value {
+    width: 100%;
+  }
+  .bottom-contact-footer {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+
+  /* Footer */
+  footer { padding: 1.5rem; }
+  .footer-inner { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .hero-svg-bmw { font-size: 120px; }
+  .hero-intro-title { font-size: 1.6rem; }
+  .service-sticker { width: 80px; }
+  .service-info h3 { font-size: 0.88rem; }
+  .service-info p { font-size: 0.78rem; }
+}
