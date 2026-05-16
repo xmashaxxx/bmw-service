@@ -44,47 +44,27 @@
 </nav>
 
 <!-- ====================================================
-     HERO — APEX STYLE (3 LAYERS)
+     HERO
      ==================================================== -->
 <section class="hero" id="hero">
-
-  <!-- LAYER 1 (bottom): Full original photo — fills screen -->
-  <div class="hero-layer-bg">
-    <img src="assets/hero/Main.png" alt="" class="hero-bg-photo" />
+  <div class="hero-img-wrap">
+    <img src="assets/hero/hero-top.jpg" alt="BMW Service Miami" class="hero-main-img" />
   </div>
-
-  <!-- LAYER 2 (middle): Curved text -->
-  <div class="hero-layer-text">
-    <svg class="hero-svg-top" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-      <defs>
-        <path id="bmw-arc" d="M 50,450 Q 500,20 950,450" />
-        <linearGradient id="bmw-grad" x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0%" stop-color="#e8a020" />
-          <stop offset="25%" stop-color="#d4781a" />
-          <stop offset="55%" stop-color="#a03020" />
-          <stop offset="80%" stop-color="#6b1515" />
-          <stop offset="100%" stop-color="#3a0a0a" />
-        </linearGradient>
-      </defs>
-      <text>
-        <textPath href="#bmw-arc" startOffset="50%" text-anchor="middle" class="hero-svg-bmw" fill="url(#bmw-grad)">BMW</textPath>
-      </text>
-    </svg>
+  <div class="hero-fade-top"></div>
+  <div class="hero-fade-bottom"></div>
+  <div class="hero-text-overlay">
+    <p class="hero-tagline">Certified technicians dedicated exclusively to BMW.<br>Where every repair is a commitment, and every detail is a standard.<br>From diagnostics to full engine rebuilds — trusted by BMW owners across South Florida.</p>
   </div>
-
-  <!-- LAYER 3 (top): Transparent car cutout — covers the text -->
-  <div class="hero-layer-car">
-    <img src="assets/hero/Main-transparent.png" alt="BMW M4 front view" class="hero-car-img" />
-  </div>
-
-  <div class="hero-fade"></div>
 </section>
 
+<div class="hero-meta-bar">
+  Hollywood, FL &nbsp;·&nbsp; Est. 2023 &nbsp;·&nbsp; BMW Specialists
+</div>
+
 <!-- ====================================================
-     SERVICE MIAMI TITLE — between hero and services
+     INTRO — between hero and services
      ==================================================== -->
 <section class="hero-intro">
-  <h2 class="hero-intro-title">SERVICE MIAMI</h2>
   <p class="hero-intro-desc">
     Certified technicians dedicated exclusively to BMW. Where every repair is a commitment, and every detail is a standard. Precision born from passion — since 2023.
   </p>
@@ -96,9 +76,9 @@
      ==================================================== -->
 <section class="services-section" id="services">
 
-  <!-- Blurred background -->
+  <!-- Dark flipped hero background -->
   <div class="services-bg">
-    <img src="assets/hero/Second.png" alt="" class="services-bg-img" />
+    <img src="assets/hero/hero-bottom.png" alt="" class="services-bg-img" />
     <div class="services-bg-overlay"></div>
   </div>
 
@@ -112,12 +92,15 @@
 
       <div class="services-list">
 
+        <!-- ── MECHANICAL SERVICES ── -->
+        <div class="service-subsection-header">Mechanical Services</div>
+
         <div class="service-row">
           <div class="service-info">
             <span class="service-num">01</span>
             <div>
-              <h3>Factory Maintenance</h3>
-              <p>Scheduled oil changes, fluid checks, tire rotations, and brake inspections — all performed strictly to BMW manufacturer specifications.</p>
+              <h3>Maintenance &amp; Service</h3>
+              <p>Oil changes, factory scheduled maintenance, fluid services, filters, batteries, and general vehicle upkeep.</p>
             </div>
           </div>
           <img src="assets/stickers/grey-m4.png" alt="" class="service-sticker" />
@@ -127,8 +110,8 @@
           <div class="service-info">
             <span class="service-num">02</span>
             <div>
-              <h3>Brake Services</h3>
-              <p>Comprehensive brake inspections, repairs, and replacements using premium OEM-grade parts. Optimal stopping performance, every time.</p>
+              <h3>Diagnostics</h3>
+              <p>Check engine light diagnostics, drivability issues, and advanced BMW troubleshooting.</p>
             </div>
           </div>
           <img src="assets/stickers/red-m2.png" alt="" class="service-sticker" />
@@ -138,8 +121,8 @@
           <div class="service-info">
             <span class="service-num">03</span>
             <div>
-              <h3>A/C Services</h3>
-              <p>Expert AC maintenance, diagnostics, and repairs. Stay comfortable through South Florida's heat with a perfectly calibrated climate system.</p>
+              <h3>Engine Repair</h3>
+              <p>Engine repairs, timing components, turbo issues, oil leaks, and complete engine replacement.</p>
             </div>
           </div>
           <img src="assets/stickers/blue-m3.png" alt="" class="service-sticker" />
@@ -149,8 +132,8 @@
           <div class="service-info">
             <span class="service-num">04</span>
             <div>
-              <h3>Vehicle Tune-Up</h3>
-              <p>Spark plugs, air filters, fuel filters, and key component inspection — restoring your engine's performance and fuel efficiency to peak condition.</p>
+              <h3>Cooling System Repair</h3>
+              <p>Water pumps, thermostats, radiators, coolant leaks, overheating diagnostics, and cooling system repairs.</p>
             </div>
           </div>
           <img src="assets/stickers/gold-m3.png" alt="" class="service-sticker" />
@@ -160,8 +143,8 @@
           <div class="service-info">
             <span class="service-num">05</span>
             <div>
-              <h3>Transmission</h3>
-              <p>Fluid changes, diagnostics, repairs, and complete overhauls. Advanced tools to identify and resolve any transmission issue with precision.</p>
+              <h3>Brake Repair</h3>
+              <p>Brake pads, rotors, brake fluid service, ABS diagnostics, and complete brake system repair.</p>
             </div>
           </div>
           <img src="assets/stickers/purple-rear.png" alt="" class="service-sticker" />
@@ -171,8 +154,8 @@
           <div class="service-info">
             <span class="service-num">06</span>
             <div>
-              <h3>Oil Change</h3>
-              <p>Premium BMW-approved motor oils and genuine filters. A complete 30-point fluid inspection included with every oil change service.</p>
+              <h3>Suspension Repair</h3>
+              <p>Control arms, shocks, struts, suspension diagnostics, and ride quality restoration.</p>
             </div>
           </div>
           <img src="assets/stickers/white-m4.png" alt="" class="service-sticker" />
@@ -182,22 +165,180 @@
           <div class="service-info">
             <span class="service-num">07</span>
             <div>
-              <h3>All Major Repairs</h3>
-              <p>Suspension, electrical, heating, cooling, and beyond. Our team handles everything with the same exacting precision applied to every vehicle.</p>
+              <h3>Transmission Service</h3>
+              <p>Transmission fluid service, transmission diagnostics, drivability issues, and related repairs.</p>
             </div>
           </div>
-          <img src="assets/stickers/magenta-front.png" alt="" class="service-sticker" style="width:150px;" />
         </div>
 
         <div class="service-row">
           <div class="service-info">
             <span class="service-num">08</span>
             <div>
-              <h3>Tuning &amp; Performance</h3>
-              <p>Since 2023, our in-house tuner has been perfecting BMW calibration. Street builds to full-competition setups — surgical precision on every project.</p>
+              <h3>Oil Leak Repair</h3>
+              <p>Oil filter housing leaks, valve cover leaks, oil pan leaks, and engine sealing repairs.</p>
             </div>
           </div>
           <img src="assets/stickers/black-m4.png" alt="" class="service-sticker" />
+        </div>
+
+        <div class="service-row">
+          <div class="service-info">
+            <span class="service-num">09</span>
+            <div>
+              <h3>AC Repair</h3>
+              <p>Air conditioning diagnostics, refrigerant service, AC compressor replacement, and climate control repair.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-info">
+            <span class="service-num">10</span>
+            <div>
+              <h3>Engine Replacement</h3>
+              <p>Complete engine replacement and installation services for BMW and European vehicles.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── ELECTRICAL & PROGRAMMING ── -->
+        <div class="service-subsection-header">Electrical &amp; Programming</div>
+
+        <div class="service-row">
+          <div class="service-info">
+            <span class="service-num">11</span>
+            <div>
+              <h3>Electrical Diagnostics</h3>
+              <p>Advanced BMW electrical diagnostics, fault tracing, and module communication diagnostics.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-info">
+            <span class="service-num">12</span>
+            <div>
+              <h3>Electrical Repair</h3>
+              <p>Electrical troubleshooting, module replacement, sensor replacement, battery registration, and charging system repair.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-info">
+            <span class="service-num">13</span>
+            <div>
+              <h3>Wiring Repair</h3>
+              <p>Wiring diagnostics, damaged harness repair, connector replacement, and electrical fault repair.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-info">
+            <span class="service-num">14</span>
+            <div>
+              <h3>BMW Programming &amp; Coding</h3>
+              <p>BMW coding, module programming, software configuration, and vehicle customization.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-info">
+            <span class="service-num">15</span>
+            <div>
+              <h3>Software Updates</h3>
+              <p>BMW software updates, module updates, and system programming using factory-level tools.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-info">
+            <span class="service-num">16</span>
+            <div>
+              <h3>Module Programming</h3>
+              <p>ECU programming, module replacement setup, coding, and software initialization.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-info">
+            <span class="service-num">17</span>
+            <div>
+              <h3>Key Programming</h3>
+              <p>BMW and Mazda key programming, replacement keys, and key setup.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-info">
+            <span class="service-num">18</span>
+            <div>
+              <h3>CarPlay Retrofits</h3>
+              <p>Apple CarPlay activation, retrofits, coding, and multimedia upgrades.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-info">
+            <span class="service-num">19</span>
+            <div>
+              <h3>Navigation Map Updates</h3>
+              <p>BMW navigation map updates and multimedia system updates.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-info">
+            <span class="service-num">20</span>
+            <div>
+              <h3>Headlight &amp; Lighting Upgrades</h3>
+              <p>Headlight installation, lighting retrofits, module setup, and LED upgrades.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-info">
+            <span class="service-num">21</span>
+            <div>
+              <h3>BMW Retrofits &amp; Upgrades</h3>
+              <p>OEM retrofit installation, BMW upgrades, coding, and feature activation.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── PRE-PURCHASE INSPECTIONS ── -->
+        <div class="service-subsection-header">Pre-Purchase Inspections</div>
+
+        <div class="service-row">
+          <div class="service-info">
+            <span class="service-num">22</span>
+            <div>
+              <h3>Pre-Purchase Inspection</h3>
+              <p>Complete vehicle inspections before purchase, including diagnostics, mechanical inspection, and condition reports.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── EUROPEAN AUTO REPAIR ── -->
+        <div class="service-subsection-header">European Auto Repair</div>
+
+        <div class="service-row">
+          <div class="service-info">
+            <span class="service-num">23</span>
+            <div>
+              <h3>European Auto Repair</h3>
+              <p>Specialized repair and maintenance for BMW, MINI, Audi, Mercedes-Benz, Porsche, and other European vehicles.</p>
+            </div>
+          </div>
         </div>
 
       </div><!-- /.services-list -->

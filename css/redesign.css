@@ -97,7 +97,7 @@ a:hover { color: var(--red-bright); }
   align-items: center;
 }
 .nav-logo-img {
-  height: 36px;
+  height: 54px;
   width: auto;
 }
 .nav-links {
@@ -154,90 +154,88 @@ a:hover { color: var(--red-bright); }
 .hero {
   position: relative;
   width: 100%;
-  min-height: 100vh;
   overflow: hidden;
-  background: var(--bg);
+  background: #000;
 }
 
-/* All 3 layers share the same container and sizing */
-.hero-layer-bg,
-.hero-layer-car {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-/* LAYER 1: Full original photo */
-.hero-layer-bg {
-  z-index: 1;
-}
-.hero-bg-photo,
-.hero-car-img {
+.hero-img-wrap {
+  position: relative;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 40%;
 }
 
-/* LAYER 2: Curved text between the two images */
-.hero-layer-text {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-.hero-svg-top {
-  width: clamp(700px, 85vw, 1200px);
+.hero-main-img {
+  display: block;
+  width: 100%;
   height: auto;
-  overflow: visible;
-  margin-bottom: -8rem;
-}
-.hero-svg-bmw {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 320px;
-  font-weight: 700;
-  opacity: 0.9;
 }
 
-/* LAYER 3: Transparent car cutout — EXACT same sizing as bg photo */
-.hero-layer-car {
-  z-index: 3;
+/* Fade to black at TOP — blends into navbar */
+.hero-fade-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, #000 0%, transparent 100%);
+  z-index: 2;
   pointer-events: none;
 }
 
-/* Fade to black at bottom */
-.hero-fade {
+/* Fade to black at BOTTOM — transitions to intro */
+.hero-fade-bottom {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 250px;
-  background: linear-gradient(to bottom, transparent, #000);
-  z-index: 4;
+  height: 40%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.5) 55%, rgba(0,0,0,0.85) 80%, #000 100%);
+  z-index: 2;
   pointer-events: none;
 }
 
-/* --- HERO INTRO (Service Miami + desc between hero & services) --- */
-.hero-intro {
+/* --- HERO TEXT OVERLAY (over fade) --- */
+.hero-text-overlay {
+  position: absolute;
+  bottom: -2%;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  text-align: center;
+  padding: 0 6rem;
+}
+.hero-tagline {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.7);
+  margin: 0 auto 1.5rem;
+}
+.hero-meta {
+  display: none;
+}
+.hero-meta-bar {
   background: #000;
   text-align: center;
-  padding: 0 2rem 4rem;
-  margin-top: -4rem;
+  padding: 1.5rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #c9a84c;
+}
+
+/* --- HERO INTRO (desc between hero & services) --- */
+.hero-intro {
+  display: none; /* hidden temporarily while adjusting hero fade */
+  background: #000;
+  text-align: center;
+  padding: 2rem 2rem 4rem;
   position: relative;
   z-index: 5;
-}
-.hero-intro-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #d4781a;
-  margin-bottom: 1.5rem;
 }
 .hero-intro-desc {
   font-family: var(--font-body);
@@ -261,6 +259,7 @@ a:hover { color: var(--red-bright); }
 .services-section {
   position: relative;
   background: #000;
+  margin-top: 6rem;
   padding-bottom: 6rem;
 }
 
@@ -278,19 +277,17 @@ a:hover { color: var(--red-bright); }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  filter: blur(40px) brightness(0.3);
-  transform: scale(1.2);
-  opacity: 0.5;
+  object-position: center top;
+  opacity: 0.7;
 }
 .services-bg-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.3) 0%,
-    rgba(139, 26, 26, 0.15) 40%,
-    rgba(0,0,0,0.95) 100%
+    rgba(0,0,0,0.2) 0%,
+    rgba(0,0,0,0.4) 50%,
+    #000 100%
   );
 }
 
@@ -398,6 +395,23 @@ a:hover { color: var(--red-bright); }
 .service-row:hover .service-sticker {
   opacity: 1;
   transform: scale(1.05);
+}
+
+/* Subsection headers */
+.service-subsection-header {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--red);
+  padding: 1.8rem 2rem 0.6rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: 0.5rem;
+}
+.service-subsection-header:first-child {
+  border-top: none;
+  margin-top: 0;
 }
 
 /* View all button */
@@ -708,11 +722,6 @@ footer {
   .hamburger { display: flex; }
 
   /* Hero */
-  .hero-svg-top { width: 98vw; margin-bottom: -4rem; }
-  .hero-svg-bmw { font-size: 180px; }
-  .hero-intro-title { font-size: 2rem; }
-  .hero-desc { font-size: 0.85rem; }
-
   /* Services */
   .services-box {
     margin: 0 1rem;
@@ -763,8 +772,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .hero-svg-bmw { font-size: 120px; }
-  .hero-intro-title { font-size: 1.6rem; }
   .service-sticker { width: 80px; }
   .service-info h3 { font-size: 0.88rem; }
   .service-info p { font-size: 0.78rem; }
