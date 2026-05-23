@@ -3,121 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Talk to a Specialist — BMW Service Miami</title>
-  <meta name="description" content="Contact BMW Service Miami in Hollywood, FL. Tell us about your BMW and our specialists will get back to you right away." />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/pages.css" />
+  <title>Service Portal — BMW Service Miami</title>
+  <meta name="description" content="Request a service, book an appointment, reach BMW Service Miami in Hollywood, FL, or apply to join our team of BMW specialists." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/redesign.css" />
+  <link rel="stylesheet" href="css/specialist.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
-  <script src="js/main.js" defer></script>
-
-  <style>
-    /* Specialist page specific */
-    .specialist-logo-box {
-      border: 1px solid var(--border-gold);
-      padding: 2.5rem;
-      background: var(--bg-card);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      gap: 1rem;
-    }
-    .logo-placeholder {
-      width: 100px; height: 100px;
-      border-radius: 50%;
-      border: 2px solid var(--gold);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-heading);
-      font-size: 2.5rem;
-      font-style: italic;
-      color: var(--gold);
-      background: var(--bg-primary);
-    }
-    .logo-name {
-      font-family: var(--font-heading);
-      font-size: 1.4rem;
-      color: var(--text-primary);
-    }
-    .logo-tagline {
-      font-size: 0.72rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-    .hours-mini { margin-top: 1rem; }
-    .hours-mini td { padding: 0.45rem 0; font-size: 0.82rem; }
-    .hours-mini td:first-child { color: var(--text-secondary); padding-right: 2rem; }
-    .hours-mini td:last-child  { color: var(--gold); text-align: right; font-weight: 600; }
-    .success-msg {
-      display: none;
-      padding: 1.25rem;
-      border: 1px solid rgba(201,168,76,0.4);
-      background: rgba(201,168,76,0.06);
-      color: var(--gold);
-      font-size: 0.88rem;
-      text-align: center;
-      margin-top: 1rem;
-    }
-
-    /* Resume upload */
-    .resume-upload-wrap {
-      position: relative;
-      border: 1px dashed var(--border-gold);
-      background: var(--bg-primary);
-      padding: 2rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      text-align: center;
-      cursor: pointer;
-      transition: border-color 0.3s, background 0.3s;
-      color: var(--text-secondary);
-      font-size: 0.88rem;
-    }
-    .resume-upload-wrap:hover,
-    .resume-upload-wrap.has-file {
-      border-color: var(--gold);
-      background: rgba(201,168,76,0.05);
-    }
-    .resume-upload-wrap.has-file #resumeLabel {
-      color: var(--gold);
-      font-weight: 600;
-    }
-
-    /* Hiring section */
-    .hiring-section {
-      padding: 100px 0;
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border-gold);
-    }
-    .hiring-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-    .hiring-img-wrap {
-      position: relative;
-      overflow: hidden;
-      box-shadow: 10px 10px 0 3px var(--gold);
-    }
-    .hiring-img {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s ease;
-    }
-    .hiring-img-wrap:hover .hiring-img { transform: scale(1.02); }
-    @media (max-width: 1024px) {
-      .hiring-layout { grid-template-columns: 1fr; gap: 3rem; }
-      .hiring-img { height: 320px; }
-    }
-  </style>
+  <script src="js/redesign.js" defer></script>
 </head>
 <body>
 
@@ -126,365 +21,326 @@
   <div class="loader-brand">BMW Service Miami</div>
   <div class="loader-track"><div class="loader-fill"></div></div>
 </div>
-<div id="page-transition"></div>
-<div class="cursor-glow"></div>
 
 <!-- Navigation -->
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <div class="nav-logo-badge"><img src="assets/images/logo-m-white.png" alt="BMW M Logo"/></div>
-      <div>
-        <div class="nav-logo-name">BMW <span>Service Miami</span></div>
-        <div class="nav-logo-sub">Hollywood, FL · Est. 2023</div>
-      </div>
+      <img src="assets/images/logo-m-white.png" alt="BMW M Logo" class="nav-logo-img"/>
     </a>
-    <ul class="nav-links" id="navMenu">
+    <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="media.html">Media</a></li>
-      <li><a href="community.html" style="color:var(--red);">NSL Collective</a></li>
-      <li><a href="specialist.html" class="nav-cta">Talk to a Specialist</a></li>
+      <li><a href="community.html">NSL</a></li>
+      <li><a href="specialist.html" class="active">Service Portal</a></li>
     </ul>
     <div class="hamburger" id="hamburger" role="button" aria-label="Open Menu" tabindex="0">
       <span></span><span></span><span></span>
     </div>
   </div>
+  <div class="nav-line"></div>
 </nav>
 
-<!-- Hero -->
-<div class="specialist-hero">
-  <div class="specialist-hero-content">
-    <span class="section-label">Get in Touch</span>
-    <h1>Talk to a <em class="text-gold">Specialist</em></h1>
-    <div class="gold-line center"></div>
-    <p>
-      Tell us about your BMW and what you need. Our team responds promptly — no wait, no runaround. Just expert answers from people who live and breathe BMW.
-    </p>
-    <div style="display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;">
-      <a href="#contact-form" class="btn btn-gold">Send a Message</a>
-      <a href="tel:+17543648984" class="btn btn-outline">Call Now</a>
-      <a href="#careers" class="btn btn-outline">Join Our Team</a>
-    </div>
-  </div>
-</div>
-
-<!-- Main Content -->
-<section class="specialist-main" id="contact-form">
-  <div class="container">
-    <div class="specialist-grid">
-
-      <!-- Contact Form -->
-      <div class="form-wrap">
-        <span class="section-label">Service Request</span>
-        <h3>Tell Us About Your <em class="text-gold">BMW</em></h3>
-        <div class="gold-line"></div>
-        <p>Fill in the details below. When you hit send, it opens a pre-filled WhatsApp message directly to our shop.</p>
-
-        <form id="contactForm" novalidate>
-          <div class="form-group">
-            <label for="name">Your Name *</label>
-            <input type="text" id="name" name="name" placeholder="John Smith" required />
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="carMake">Vehicle Make *</label>
-              <select id="carMake" name="carMake" required>
-                <option value="" disabled selected>Select make</option>
-                <option value="BMW">BMW</option>
-                <option value="MINI">MINI</option>
-                <option value="Rolls-Royce">Rolls-Royce</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="carModel">Model *</label>
-              <input type="text" id="carModel" name="carModel" placeholder="e.g. M3, X5, 330i" required />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="carYear">Year *</label>
-              <input type="number" id="carYear" name="carYear" placeholder="e.g. 2021" min="1990" max="2026" required />
-            </div>
-            <div class="form-group">
-              <label for="service">Service Needed</label>
-              <select id="service" name="service">
-                <option value="" disabled selected>Select service</option>
-                <option value="Factory Maintenance">Factory Maintenance</option>
-                <option value="Brake Service">Brake Service</option>
-                <option value="A/C Service">A/C Service</option>
-                <option value="Tune-Up">Tune-Up</option>
-                <option value="Tires & Alignments">Tires &amp; Alignments</option>
-                <option value="Transmission Service">Transmission Service</option>
-                <option value="Oil Change">Oil Change</option>
-                <option value="Major Repair">Major Repair</option>
-                <option value="Performance Tuning">Performance Tuning</option>
-                <option value="Diagnostic Only">Diagnostic Only</option>
-                <option value="Not Sure">Not Sure — Need Diagnosis</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="comments">Describe the Issue or Request *</label>
-            <textarea id="comments" name="comments"
-              placeholder="Tell us what's going on with your car. Any symptoms, warning lights, sounds — the more detail, the better."
-              required></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-gold form-submit">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-            Send via WhatsApp
-          </button>
-        </form>
-
-        <p class="form-note">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-          Submitting opens WhatsApp with your details pre-filled. No app account required on desktop.
-        </p>
-      </div>
-
-      <!-- Right Side: Info + Call + Map -->
-      <div class="specialist-info">
-
-        <!-- Logo & Branding -->
-        <div class="specialist-logo-box">
-          <!--
-            Replace the placeholder below with a real logo:
-            <img src="assets/images/logo.png" alt="BMW Service Miami Logo" style="max-width:140px;" />
-          -->
-          <div class="logo-placeholder">B</div>
-          <div class="logo-name">BMW Service Miami</div>
-          <div class="logo-tagline">Hollywood, FL · Precision Since 2023</div>
-          <div class="gold-line center" style="margin:0.5rem auto;"></div>
-          <p style="font-size:0.82rem;color:var(--text-muted);max-width:240px;">
-            Exclusive BMW specialists serving South Florida with factory-level expertise.
-          </p>
-        </div>
-
-        <!-- Or Call -->
-        <div>
-          <div class="or-call">
-            <div class="or-call-line"></div>
-            <span>Or reach us directly</span>
-            <div class="or-call-line"></div>
-          </div>
-
-          <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:1rem;">
-            <a href="tel:+17543648984" class="call-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 13.6 19.79 19.79 0 01.01 5.06a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 10.1a16 16 0 006 6l.35-.35a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              <div class="call-info">
-                <div class="call-label">Call the Shop</div>
-                <div class="call-number">(754) 364-8984</div>
-              </div>
-            </a>
-
-            <a href="https://wa.me/17543648984" target="_blank" rel="noopener" class="call-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-              <div class="call-info">
-                <div class="call-label">WhatsApp</div>
-                <div class="call-number">+1 (754) 364-8984</div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <!-- Hours + Mini Map -->
-        <div>
-          <span class="section-label" style="margin-bottom:1rem;display:block;">Hours &amp; Location</span>
-          <table class="hours-table hours-mini" style="margin-bottom:1.5rem;">
-            <tr><td>Mon – Thu</td><td>8:00 AM – 8:00 PM</td></tr>
-            <tr><td>Friday</td>   <td>8:30 AM – 8:00 PM</td></tr>
-            <tr><td>Saturday</td> <td>8:00 AM – 8:00 PM</td></tr>
-            <tr><td>Sunday</td>   <td style="color:var(--text-muted)">Closed</td></tr>
-          </table>
-          <div class="specialist-mini-map">
-            <a href="https://www.google.com/maps/place/2027+Grant+St,+Hollywood,+FL+33020" target="_blank" rel="noopener">
-              <iframe
-                src="https://maps.google.com/maps?q=2027+Grant+St+Hollywood+FL+33020&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                title="BMW Service Miami Map"
-                loading="lazy"
-                style="border:1px solid var(--border-gold);">
-              </iframe>
-            </a>
-          </div>
-          <p style="margin-top:0.75rem;font-size:0.8rem;color:var(--text-muted);">
-            2027 Grant St, Hollywood, FL 33020 &nbsp;·&nbsp;
-            <a href="https://www.google.com/maps/place/2027+Grant+St,+Hollywood,+FL+33020"
-               target="_blank" rel="noopener" style="color:var(--gold);">Get Directions ↗</a>
-          </p>
-        </div>
-
-      </div>
+<!-- ====================================================
+     HERO
+     ==================================================== -->
+<section class="sp-hero">
+  <img src="assets/hero/service-portal.png" alt="BMW — top view" class="sp-hero-img" />
+  <div class="sp-hero-fade-top"></div>
+  <div class="sp-hero-fade-bottom"></div>
+  <div class="sp-hero-text">
+    <span class="sp-hero-eyebrow">Service Portal</span>
+    <h1 class="sp-hero-title">Talk to a <em>Specialist</em></h1>
+    <p class="sp-hero-tagline">Request a service, book a time, reach the shop, or join the team — everything starts here.</p>
+    <div class="sp-hero-actions">
+      <a href="#request" class="sp-btn sp-btn-red">Request Service</a>
+      <a href="#careers" class="sp-btn sp-btn-outline">Join Our Team</a>
     </div>
   </div>
 </section>
 
-<!-- We're Hiring -->
-<section class="hiring-section" id="careers">
-  <div class="container">
-    <div class="hiring-layout">
+<!-- ====================================================
+     SECTION 1 — REQUEST A SERVICE
+     ==================================================== -->
+<section class="sp-section" id="request">
+  <div class="sp-section-head">
+    <span class="sp-section-eyebrow">Service Request</span>
+    <h2 class="sp-section-title">Request a <em>Service</em></h2>
+    <p class="sp-section-intro">Tell us about your BMW and what you need. Send the details to our team, or book a time slot directly on our calendar.</p>
+  </div>
 
-      <!-- Hiring Photo -->
-      <div class="hiring-img-wrap">
-        <img src="assets/images/HIRING.JPG" alt="We're Hiring at BMW Service Miami" class="hiring-img" loading="lazy"/>
+  <div class="sp-request-grid">
+
+    <!-- Service request form -->
+    <form class="sp-form" id="sp-service-form" novalidate>
+      <div class="sp-field">
+        <label for="sp-name">Your Name *</label>
+        <input type="text" id="sp-name" name="name" placeholder="John Smith" required />
       </div>
 
-      <!-- Hiring Form -->
-      <div>
-        <span class="section-label">Careers</span>
-        <h2>We're <em class="text-gold">Hiring</em></h2>
-        <div class="gold-line"></div>
-        <p style="margin-bottom:2rem;">Think you have what it takes? Fill out the form below and we'll send your info directly to the shop manager via WhatsApp. We're always looking for skilled technicians to join the BMW Service Miami family.</p>
-
-        <form id="hiringForm" novalidate>
-          <div class="form-group">
-            <label for="applicantName">Full Name *</label>
-            <input type="text" id="applicantName" name="applicantName" placeholder="Your full name" required />
-          </div>
-
-          <div class="form-group">
-            <label for="position">Position You're Interested In *</label>
-            <input type="text" id="position" name="position" placeholder="e.g. Lead Technician, Shop Foreman, Service Advisor..." required />
-          </div>
-
-          <div class="form-group">
-            <label for="specialty">Your Field of Specialty *</label>
-            <select id="specialty" name="specialty" required>
-              <option value="" disabled selected>Select your specialty</option>
-              <option value="Engine &amp; Drivetrain Technician">Engine &amp; Drivetrain Technician</option>
-              <option value="Transmission Specialist">Transmission Specialist</option>
-              <option value="Brake &amp; Suspension Technician">Brake &amp; Suspension Technician</option>
-              <option value="Electrical &amp; Diagnostics Technician">Electrical &amp; Diagnostics Technician</option>
-              <option value="A/C &amp; Climate Control Technician">A/C &amp; Climate Control Technician</option>
-              <option value="Performance &amp; Tuning Specialist">Performance &amp; Tuning Specialist</option>
-              <option value="Oil, Fluids &amp; Maintenance Technician">Oil, Fluids &amp; Maintenance Technician</option>
-              <option value="Alignment &amp; Tire Specialist">Alignment &amp; Tire Specialist</option>
-              <option value="General Service Technician">General Service Technician</option>
-              <option value="Apprentice / Helper">Apprentice / Helper</option>
-              <option value="Service Advisor">Service Advisor</option>
-              <option value="Parts Specialist">Parts Specialist</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="resumeFile">Upload Your Resume</label>
-            <div class="resume-upload-wrap" id="resumeDropZone">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-              <span id="resumeLabel">Click to upload or drag &amp; drop</span>
-              <span style="font-size:0.75rem;color:var(--text-muted);">PDF, DOC, DOCX — max 10MB</span>
-              <input type="file" id="resumeFile" name="resumeFile" accept=".pdf,.doc,.docx" style="position:absolute;inset:0;opacity:0;cursor:pointer;"/>
-            </div>
-          </div>
-
-          <button type="submit" class="btn btn-gold form-submit">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-            Send Application via WhatsApp
-          </button>
-        </form>
-
-        <p class="form-note" style="margin-top:1rem;">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-          WhatsApp will open pre-filled. If you uploaded a resume, attach it directly in the chat.
-        </p>
+      <div class="sp-field-row">
+        <div class="sp-field">
+          <label for="sp-make">Vehicle Make *</label>
+          <select id="sp-make" name="make" required>
+            <option value="" disabled selected>Select make</option>
+            <option value="BMW">BMW</option>
+            <option value="MINI">MINI</option>
+            <option value="Rolls-Royce">Rolls-Royce</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="sp-field">
+          <label for="sp-model">Model *</label>
+          <input type="text" id="sp-model" name="model" placeholder="e.g. M3, X5, 330i" required />
+        </div>
       </div>
 
-    </div>
+      <div class="sp-field-row">
+        <div class="sp-field">
+          <label for="sp-year">Year *</label>
+          <input type="number" id="sp-year" name="year" placeholder="e.g. 2021" min="1980" max="2027" required />
+        </div>
+        <div class="sp-field">
+          <label for="sp-service">Service Needed</label>
+          <select id="sp-service" name="service">
+            <option value="" disabled selected>Select service</option>
+            <option value="Factory Maintenance">Factory Maintenance</option>
+            <option value="Diagnostics">Diagnostics</option>
+            <option value="Brake Service">Brake Service</option>
+            <option value="A/C Service">A/C Service</option>
+            <option value="Engine Repair">Engine Repair</option>
+            <option value="Transmission Service">Transmission Service</option>
+            <option value="Oil Change">Oil Change</option>
+            <option value="Electrical & Programming">Electrical &amp; Programming</option>
+            <option value="Performance Tuning">Performance Tuning</option>
+            <option value="Pre-Purchase Inspection">Pre-Purchase Inspection</option>
+            <option value="Not Sure">Not Sure — Need Diagnosis</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="sp-field">
+        <label for="sp-details">Describe the Issue or Request *</label>
+        <textarea id="sp-details" name="details" placeholder="Tell us what's going on — symptoms, warning lights, sounds. The more detail, the better." required></textarea>
+      </div>
+
+      <button type="submit" class="sp-btn sp-btn-red sp-form-submit">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        Send Request
+      </button>
+
+      <p class="sp-form-note">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+        Submitting opens your email app with the details filled in, ready to send to the shop.
+      </p>
+    </form>
+
+    <!-- Google booking aside -->
+    <aside class="sp-booking">
+      <div class="sp-booking-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <h3>Prefer to pick a time?</h3>
+      <p>Book your appointment directly on our calendar and choose a slot that works for you.</p>
+      <!-- TODO: replace the href below with your Google Calendar appointment scheduling link -->
+      <a href="https://calendar.google.com/" target="_blank" rel="noopener" class="sp-btn sp-btn-red" id="sp-booking-link">Open Booking Calendar</a>
+      <span class="sp-booking-note">Powered by Google Calendar</span>
+    </aside>
+
   </div>
 </section>
+
+<!-- ====================================================
+     SECTION 2 — CONTACT
+     ==================================================== -->
+<section class="sp-section" id="contact">
+  <div class="sp-section-head">
+    <span class="sp-section-eyebrow">Contact</span>
+    <h2 class="sp-section-title">Reach Us <em>Directly</em></h2>
+  </div>
+
+  <div class="sp-contact-grid">
+    <a href="tel:+17543648984" class="sp-contact-card">
+      <span class="sp-contact-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.07 13.6 19.79 19.79 0 010 5.06 2 2 0 012 2.88h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.91 10.1a16 16 0 006 6l.36-.35a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+      </span>
+      <span class="sp-contact-label">Call the Shop</span>
+      <span class="sp-contact-value">(754) 364-8984</span>
+      <span class="sp-contact-sub">Mon&ndash;Sat &middot; 8AM&ndash;8PM</span>
+    </a>
+
+    <a href="https://wa.me/17543648984" target="_blank" rel="noopener" class="sp-contact-card">
+      <span class="sp-contact-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+      </span>
+      <span class="sp-contact-label">WhatsApp</span>
+      <span class="sp-contact-value">Message the Crew</span>
+      <span class="sp-contact-sub">+1 (754) 364-8984</span>
+    </a>
+
+    <a href="https://www.google.com/maps/place/2027+Grant+St,+Hollywood,+FL+33020" target="_blank" rel="noopener" class="sp-contact-card">
+      <span class="sp-contact-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </span>
+      <span class="sp-contact-label">Visit the Shop</span>
+      <span class="sp-contact-value">2027 Grant St</span>
+      <span class="sp-contact-sub">Hollywood, FL 33020</span>
+    </a>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION 3 — WE ARE HIRING
+     ==================================================== -->
+<section class="sp-section" id="careers">
+  <div class="sp-section-head">
+    <span class="sp-section-eyebrow">Careers</span>
+    <h2 class="sp-section-title">We Are <em>Hiring</em></h2>
+    <p class="sp-section-intro">Think you have what it takes? Tell us about yourself and your specialty — we're always looking for skilled people to join the BMW Service Miami team.</p>
+  </div>
+
+  <div class="sp-hiring-grid">
+
+    <div class="sp-hiring-img">
+      <img src="assets/images/HIRING.JPG" alt="Join the BMW Service Miami team" loading="lazy" decoding="async"/>
+    </div>
+
+    <form class="sp-form" id="sp-hiring-form" novalidate>
+      <div class="sp-field">
+        <label for="sp-applicant">Full Name *</label>
+        <input type="text" id="sp-applicant" name="applicantName" placeholder="Your full name" required />
+      </div>
+
+      <div class="sp-field-row">
+        <div class="sp-field">
+          <label for="sp-phone">Phone *</label>
+          <input type="tel" id="sp-phone" name="phone" placeholder="(754) 000-0000" required />
+        </div>
+        <div class="sp-field">
+          <label for="sp-address">Address *</label>
+          <input type="text" id="sp-address" name="address" placeholder="City, State" required />
+        </div>
+      </div>
+
+      <div class="sp-field">
+        <label for="sp-specialty">Field of Specialty *</label>
+        <select id="sp-specialty" name="specialty" required>
+          <option value="" disabled selected>Select your specialty</option>
+          <option value="Engine & Drivetrain Technician">Engine &amp; Drivetrain Technician</option>
+          <option value="Transmission Specialist">Transmission Specialist</option>
+          <option value="Brake & Suspension Technician">Brake &amp; Suspension Technician</option>
+          <option value="Electrical & Diagnostics Technician">Electrical &amp; Diagnostics Technician</option>
+          <option value="A/C & Climate Control Technician">A/C &amp; Climate Control Technician</option>
+          <option value="Performance & Tuning Specialist">Performance &amp; Tuning Specialist</option>
+          <option value="Programming & Coding Specialist">Programming &amp; Coding Specialist</option>
+          <option value="General Service Technician">General Service Technician</option>
+          <option value="Apprentice / Helper">Apprentice / Helper</option>
+          <option value="Service Advisor">Service Advisor</option>
+          <option value="Parts Specialist">Parts Specialist</option>
+        </select>
+      </div>
+
+      <div class="sp-field">
+        <label for="sp-resume-file">Upload Your Resume</label>
+        <div class="sp-resume" id="sp-resume-zone">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <span class="sp-resume-label" id="sp-resume-label">Click to choose a file</span>
+          <span class="sp-resume-hint">PDF, DOC, DOCX</span>
+          <input type="file" id="sp-resume-file" name="resume" accept=".pdf,.doc,.docx" />
+        </div>
+      </div>
+
+      <button type="submit" class="sp-btn sp-btn-red sp-form-submit">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        Send Application
+      </button>
+
+      <p class="sp-form-note">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+        Submitting opens your email app pre-filled — attach your resume file to that email before sending.
+      </p>
+    </form>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <span>&copy; 2025 BMW Service Miami &middot; Hollywood, FL</span>
+    <span class="footer-credit">Built by Xtatic Digital</span>
+  </div>
+</footer>
 
 <script>
-// Resume file picker — show filename when selected
-document.getElementById('resumeFile').addEventListener('change', function() {
-  const zone  = document.getElementById('resumeDropZone');
-  const label = document.getElementById('resumeLabel');
+/* --- Shop email (placeholder — swap for the real address) --- */
+var SHOP_EMAIL = 'info@bmwservicemiami.com';
+
+/* --- Service request form → email --- */
+document.getElementById('sp-service-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var v = function (id) { return (document.getElementById(id).value || '').trim(); };
+  var name = v('sp-name'), make = document.getElementById('sp-make').value,
+      model = v('sp-model'), year = v('sp-year'),
+      service = document.getElementById('sp-service').value || 'Not specified',
+      details = v('sp-details');
+
+  if (!name || !make || !model || !year || !details) {
+    alert('Please fill in all required fields before sending.');
+    return;
+  }
+
+  var subject = 'Service Request — ' + year + ' ' + make + ' ' + model;
+  var body =
+    'Name: ' + name + '\n' +
+    'Vehicle: ' + year + ' ' + make + ' ' + model + '\n' +
+    'Service Needed: ' + service + '\n\n' +
+    'Details:\n' + details + '\n';
+  window.location.href = 'mailto:' + SHOP_EMAIL +
+    '?subject=' + encodeURIComponent(subject) +
+    '&body=' + encodeURIComponent(body);
+});
+
+/* --- Resume picker — reflect the chosen filename --- */
+document.getElementById('sp-resume-file').addEventListener('change', function () {
+  var zone = document.getElementById('sp-resume-zone');
+  var label = document.getElementById('sp-resume-label');
   if (this.files && this.files[0]) {
-    label.textContent = '📎 ' + this.files[0].name;
+    label.textContent = this.files[0].name;
     zone.classList.add('has-file');
   } else {
-    label.textContent = 'Click to upload or drag & drop';
+    label.textContent = 'Click to choose a file';
     zone.classList.remove('has-file');
   }
 });
 
-document.getElementById('hiringForm').addEventListener('submit', function(e) {
+/* --- Hiring application form → email --- */
+document.getElementById('sp-hiring-form').addEventListener('submit', function (e) {
   e.preventDefault();
-  const name      = document.getElementById('applicantName').value.trim();
-  const position  = document.getElementById('position').value.trim();
-  const specialty = document.getElementById('specialty').value;
-  const fileInput = document.getElementById('resumeFile');
-  const fileName  = fileInput.files && fileInput.files[0] ? fileInput.files[0].name : null;
+  var v = function (id) { return (document.getElementById(id).value || '').trim(); };
+  var name = v('sp-applicant'), phone = v('sp-phone'),
+      address = v('sp-address'), specialty = document.getElementById('sp-specialty').value;
+  var fileInput = document.getElementById('sp-resume-file');
+  var fileName = fileInput.files && fileInput.files[0] ? fileInput.files[0].name : null;
 
-  if (!name || !position || !specialty) {
+  if (!name || !phone || !address || !specialty) {
     alert('Please fill in all required fields before sending.');
     return;
   }
 
-  const message =
-    `💼 *BMW Service Miami — Job Application*\n\n` +
-    `👤 *Full Name:* ${name}\n` +
-    `🔩 *Position Interested In:* ${position}\n` +
-    `🛠 *Field of Specialty:* ${specialty}\n` +
-    (fileName ? `📎 *Resume:* ${fileName} _(please attach file in this chat)_\n` : '') +
-    `\n_Sent from bmwservicemiami.com_`;
-
-  const encoded = encodeURIComponent(message);
-  window.open(`https://wa.me/17543648984?text=${encoded}`, '_blank');
-});
-</script>
-
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-copy">&copy; 2025 BMW Service Miami · 2027 Grant St, Hollywood, FL 33020</div>
-      <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="media.html">Gallery</a></li>
-        <li><a href="community.html">NSL</a></li>
-        <li><a href="specialist.html">Contact</a></li>
-      </ul>
-      <div class="footer-credit">Built by <span>Xtatic Digital</span></div>
-    </div>
-  </div>
-</footer>
-
-<!-- WhatsApp Form Script -->
-<script>
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const name     = document.getElementById('name').value.trim();
-  const make     = document.getElementById('carMake').value;
-  const model    = document.getElementById('carModel').value.trim();
-  const year     = document.getElementById('carYear').value.trim();
-  const service  = document.getElementById('service').value || 'Not specified';
-  const comments = document.getElementById('comments').value.trim();
-
-  // Validate required fields
-  if (!name || !make || !model || !year || !comments) {
-    alert('Please fill in all required fields before sending.');
-    return;
-  }
-
-  // Build the WhatsApp message
-  const message =
-    `🔧 *BMW Service Miami — Service Request*\n\n` +
-    `👤 *Name:* ${name}\n` +
-    `🚗 *Vehicle:* ${year} ${make} ${model}\n` +
-    `🛠 *Service Needed:* ${service}\n` +
-    `📝 *Details:*\n${comments}\n\n` +
-    `_Sent from bmwservicemiami.com_`;
-
-  const encoded = encodeURIComponent(message);
-  const waURL   = `https://wa.me/17543648984?text=${encoded}`;
-
-  // Open WhatsApp in new tab
-  window.open(waURL, '_blank');
+  var subject = 'Job Application — ' + name;
+  var body =
+    'Full Name: ' + name + '\n' +
+    'Phone: ' + phone + '\n' +
+    'Address: ' + address + '\n' +
+    'Field of Specialty: ' + specialty + '\n' +
+    (fileName
+      ? 'Resume: ' + fileName + ' (please attach this file to the email before sending)\n'
+      : 'Resume: (please attach your resume to this email before sending)\n');
+  window.location.href = 'mailto:' + SHOP_EMAIL +
+    '?subject=' + encodeURIComponent(subject) +
+    '&body=' + encodeURIComponent(body);
 });
 </script>
 

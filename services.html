@@ -4,398 +4,453 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services — BMW Service Miami</title>
-  <meta name="description" content="Full BMW service menu: factory maintenance, brakes, A/C, tune-ups, tires, transmission, oil changes, major repairs, and performance tuning." />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/pages.css" />
+  <meta name="description" content="Full BMW service menu: mechanical repairs, electrical diagnostics, programming, performance tuning, and European auto repair in Hollywood, FL." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/redesign.css" />
+  <link rel="stylesheet" href="css/services.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
-  <script src="js/main.js" defer></script>
+  <script src="js/redesign.js" defer></script>
 </head>
-<body class="services-page">
+<body>
 
 <!-- Page Loader -->
 <div id="page-loader">
   <div class="loader-brand">BMW Service Miami</div>
   <div class="loader-track"><div class="loader-fill"></div></div>
 </div>
-<div id="page-transition"></div>
-<div class="cursor-glow"></div>
 
 <!-- Navigation -->
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <div class="nav-logo-badge"><img src="assets/images/logo-m-white.png" alt="BMW M Logo"/></div>
-      <div>
-        <div class="nav-logo-name">BMW <span>Service Miami</span></div>
-        <div class="nav-logo-sub">Hollywood, FL · Est. 2023</div>
-      </div>
+      <img src="assets/images/logo-m-white.png" alt="BMW M Logo" class="nav-logo-img"/>
     </a>
-    <ul class="nav-links" id="navMenu">
+    <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
       <li><a href="media.html">Media</a></li>
-      <li><a href="community.html" style="color:var(--red);">NSL Collective</a></li>
-      <li><a href="specialist.html" class="nav-cta">Talk to a Specialist</a></li>
+      <li><a href="community.html">NSL</a></li>
+      <li><a href="specialist.html">Service Portal</a></li>
     </ul>
     <div class="hamburger" id="hamburger" role="button" aria-label="Open Menu" tabindex="0">
       <span></span><span></span><span></span>
     </div>
   </div>
+  <div class="nav-line"></div>
 </nav>
 
-<!-- Page Hero -->
-<div class="page-hero">
-  <div class="container">
-    <div class="page-hero-content">
-      <span class="section-label">Our Services</span>
-      <h1>BMW <em class="text-gold">Service</em> Menu</h1>
-      <div class="gold-line"></div>
-      <p>Every service performed to factory specification — or beyond. Explore our full range of BMW-dedicated repair and maintenance offerings below.</p>
-    </div>
-  </div>
-</div>
-
-<!-- More Than a Repair Shop -->
-<div class="svc-section" style="background: var(--bg-secondary); border-bottom: 1px solid var(--border-gold);">
-  <div class="container">
-    <div class="svc-layout">
-      <div class="svc-img-wrap">
-        <img class="svc-img" src="assets/images/MORETHANAREPAIRSHOP.JPG" alt="Luxury and exotic vehicle service" loading="lazy"/>
-      </div>
-      <div class="svc-content">
-        <span class="section-label">Who We Serve</span>
-        <h2>More Than a <em class="text-gold">Repair Shop</em></h2>
-        <div class="gold-line"></div>
-        <p>
-          While BMW is our passion and our foundation, our expertise doesn't stop there. We work on the full spectrum of European luxury vehicles — Mercedes-Benz, Porsche, Audi, Lamborghini, Ferrari, and beyond — with the same factory-level precision we apply to every BMW that rolls through our doors.
-        </p>
-        <p>
-          And if you drive something truly one-of-a-kind — a rare import, a bespoke build, a machine that turns heads before it even stops — bring it in. We thrive on the unusual. The vehicles most shops won't touch are exactly the ones we love the most.
-        </p>
-        <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1.5rem;">
-          <div>
-            <div style="font-family: var(--font-heading); font-size: 0.85rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.25rem;">BMW &amp; MINI</div>
-            <div style="font-size: 0.78rem; color: var(--text-muted);">Our Specialty</div>
-          </div>
-          <div style="width: 1px; background: var(--border-gold);"></div>
-          <div>
-            <div style="font-family: var(--font-heading); font-size: 0.85rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.25rem;">European Luxury</div>
-            <div style="font-size: 0.78rem; color: var(--text-muted);">Porsche · Mercedes · Audi · Ferrari</div>
-          </div>
-          <div style="width: 1px; background: var(--border-gold);"></div>
-          <div>
-            <div style="font-family: var(--font-heading); font-size: 0.85rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.25rem;">The Unusual</div>
-            <div style="font-size: 0.78rem; color: var(--text-muted);">Rare · Exotic · One-of-a-Kind</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- ====================================================
+     PAGE HEADER
+     ==================================================== -->
+<header class="svc-header">
+  <h1 class="svc-page-title">BMW Service Menu</h1>
+  <p class="svc-page-intro">Every service performed to factory specification — or beyond.</p>
+</header>
 
 <!-- ====================================================
-     FACTORY MAINTENANCE
+     MECHANICAL SERVICES
      ==================================================== -->
-<div class="svc-section" id="factory">
-  <div class="container">
-    <div class="svc-layout">
-      <div class="svc-img-wrap">
-        <img class="svc-img"
-          src="assets/images/FACTORYMAINTENECE.JPG"
-          alt="BMW factory maintenance service"
-          loading="lazy" style="height:auto;"/>
-      </div>
-      <div class="svc-content">
-        <span class="section-label">01 — Scheduled Service</span>
-        <h2>Factory <em class="text-gold">Maintenance</em></h2>
-        <div class="gold-line"></div>
-        <p>
-          Your BMW was engineered to extraordinary standards — and maintaining those standards requires precision. Our expert technicians perform all scheduled maintenance tasks adhering strictly to BMW manufacturer specifications, ensuring your warranty integrity and long-term performance are never compromised.
-        </p>
-        <p>
-          We go beyond checking boxes. Every factory maintenance visit includes a full multi-point inspection of critical systems, giving you a complete picture of your vehicle's health.
-        </p>
-        <ul class="svc-features">
-          <li>Engine oil and filter replacement with BMW-approved fluids</li>
-          <li>Brake fluid, coolant, power steering, and differential fluid checks</li>
-          <li>Tire rotation and pressure calibration to spec</li>
-          <li>Brake pad thickness and rotor surface inspection</li>
-          <li>Battery health test and charging system check</li>
-          <li>BMW OBC service reset and condition-based service update</li>
+<section class="svc-category">
+  <div class="svc-category-label">Mechanical Services</div>
+
+  <div class="svc-grid">
+
+    <!-- 01 Maintenance & Service -->
+    <div class="svc-card" id="svc-maintenance">
+      <div class="svc-photo-placeholder"><img src="assets/services/maintenance.jpg" alt="Maintenance &amp; Service" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">Maintenance &amp; Service</h2>
+        <p class="svc-card-desc">Oil changes, factory scheduled maintenance, fluid services, filters, batteries, and general vehicle upkeep.</p>
+        <ul class="svc-card-list">
+          <li>Oil changes</li>
+          <li>Factory scheduled maintenance</li>
+          <li>Fluid services</li>
+          <li>Filters</li>
+          <li>Batteries</li>
+          <li>General vehicle upkeep</li>
         </ul>
-        <a href="specialist.html" class="btn btn-gold">Schedule Factory Service</a>
+      </div>
+    </div>
+
+    <!-- 02 Diagnostics -->
+    <div class="svc-card" id="svc-diagnostics">
+      <div class="svc-photo-placeholder"><img src="assets/services/diagnostics.png" alt="Diagnostics" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">Diagnostics</h2>
+        <p class="svc-card-desc">Check engine light diagnostics, drivability issues, and advanced BMW troubleshooting.</p>
+        <ul class="svc-card-list">
+          <li>Check engine light diagnostics</li>
+          <li>Drivability issues</li>
+          <li>Advanced BMW troubleshooting</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 03 Engine Repair -->
+    <div class="svc-card" id="svc-engine-repair">
+      <div class="svc-photo-placeholder"><img src="assets/services/engine-repair.png" alt="Engine Repair" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">Engine Repair</h2>
+        <p class="svc-card-desc">Engine repairs, timing components, turbo issues, oil leaks, and complete engine replacement.</p>
+        <ul class="svc-card-list">
+          <li>Engine repairs</li>
+          <li>Timing components</li>
+          <li>Turbo issues</li>
+          <li>Oil leaks</li>
+          <li>Complete engine replacement</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 04 Cooling System Repair -->
+    <div class="svc-card" id="svc-cooling">
+      <div class="svc-photo-placeholder"><img src="assets/services/cooling.png" alt="Cooling System Repair" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">Cooling System Repair</h2>
+        <p class="svc-card-desc">Water pumps, thermostats, radiators, coolant leaks, overheating diagnostics, and cooling system repairs.</p>
+        <ul class="svc-card-list">
+          <li>Water pumps</li>
+          <li>Thermostats</li>
+          <li>Radiators</li>
+          <li>Coolant leaks</li>
+          <li>Overheating diagnostics</li>
+          <li>Cooling system repairs</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 05 Brake Repair -->
+    <div class="svc-card" id="svc-brake">
+      <div class="svc-photo-placeholder"><img src="assets/services/brake.png" alt="Brake Repair" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">Brake Repair</h2>
+        <p class="svc-card-desc">Brake pads, rotors, brake fluid service, ABS diagnostics, and complete brake system repair.</p>
+        <ul class="svc-card-list">
+          <li>Brake pads</li>
+          <li>Rotors</li>
+          <li>Brake fluid service</li>
+          <li>ABS diagnostics</li>
+          <li>Complete brake system repair</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 06 Suspension Repair -->
+    <div class="svc-card" id="svc-suspension">
+      <div class="svc-photo-placeholder"><img src="assets/services/suspension.jpg" alt="Suspension Repair" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">Suspension Repair</h2>
+        <p class="svc-card-desc">Control arms, shocks, struts, suspension diagnostics, and ride quality restoration.</p>
+        <ul class="svc-card-list">
+          <li>Control arms</li>
+          <li>Shocks</li>
+          <li>Struts</li>
+          <li>Suspension diagnostics</li>
+          <li>Ride quality restoration</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 07 Transmission Service -->
+    <div class="svc-card" id="svc-transmission">
+      <div class="svc-photo-placeholder"><img src="assets/services/transmission.png" alt="Transmission Service" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">Transmission Service</h2>
+        <p class="svc-card-desc">Transmission fluid service, transmission diagnostics, drivability issues, and related repairs.</p>
+        <ul class="svc-card-list">
+          <li>Transmission fluid service</li>
+          <li>Transmission diagnostics</li>
+          <li>Drivability issues</li>
+          <li>Related repairs</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 08 Oil Leak Repair -->
+    <div class="svc-card" id="svc-oil-leak">
+      <div class="svc-photo-placeholder"><img src="assets/services/oil-leak.jpg" alt="Oil Leak Repair" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">Oil Leak Repair</h2>
+        <p class="svc-card-desc">Oil filter housing leaks, valve cover leaks, oil pan leaks, and engine sealing repairs.</p>
+        <ul class="svc-card-list">
+          <li>Oil filter housing leaks</li>
+          <li>Valve cover leaks</li>
+          <li>Oil pan leaks</li>
+          <li>Engine sealing repairs</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 09 AC Repair -->
+    <div class="svc-card" id="svc-ac">
+      <div class="svc-photo-placeholder"><img src="assets/services/ac.png" alt="AC Repair" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">AC Repair</h2>
+        <p class="svc-card-desc">Air conditioning diagnostics, refrigerant service, AC compressor replacement, and climate control repair.</p>
+        <ul class="svc-card-list">
+          <li>Air conditioning diagnostics</li>
+          <li>Refrigerant service</li>
+          <li>AC compressor replacement</li>
+          <li>Climate control repair</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 10 Engine Replacement -->
+    <div class="svc-card" id="svc-engine-replacement">
+      <div class="svc-photo-placeholder"><img src="assets/services/engine-replacement.jpg" alt="Engine Replacement" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">Engine Replacement</h2>
+        <p class="svc-card-desc">Complete engine replacement and installation services for BMW and European vehicles.</p>
+        <ul class="svc-card-list">
+          <li>Complete engine replacement</li>
+          <li>Installation services</li>
+          <li>BMW and European vehicles</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================================================
+     ELECTRICAL & PROGRAMMING DEPARTMENT
+     ==================================================== -->
+<section class="svc-category">
+  <div class="svc-category-label">Electrical &amp; Programming Department</div>
+
+  <div class="svc-grid">
+
+    <!-- 01 Electrical Diagnostics -->
+    <div class="svc-card" id="svc-electrical-diagnostics">
+      <div class="svc-photo-placeholder"><img src="assets/services/electrical-diagnostics.png" alt="Electrical Diagnostics" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">Electrical Diagnostics</h2>
+        <p class="svc-card-desc">Advanced BMW electrical diagnostics, fault tracing, and module communication diagnostics.</p>
+        <ul class="svc-card-list">
+          <li>Advanced BMW electrical diagnostics</li>
+          <li>Fault tracing</li>
+          <li>Module communication diagnostics</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 02 Electrical Repair -->
+    <div class="svc-card" id="svc-electrical-repair">
+      <div class="svc-photo-placeholder"><img src="assets/services/electrical-repair.png" alt="Electrical Repair" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">Electrical Repair</h2>
+        <p class="svc-card-desc">Electrical troubleshooting, module replacement, sensor replacement, battery registration, and charging system repair.</p>
+        <ul class="svc-card-list">
+          <li>Electrical troubleshooting</li>
+          <li>Module replacement</li>
+          <li>Sensor replacement</li>
+          <li>Battery registration</li>
+          <li>Charging system repair</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 03 Wiring Repair -->
+    <div class="svc-card" id="svc-wiring">
+      <div class="svc-photo-placeholder"><img src="assets/services/wiring.png" alt="Wiring Repair" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">Wiring Repair</h2>
+        <p class="svc-card-desc">Wiring diagnostics, damaged harness repair, connector replacement, and electrical fault repair.</p>
+        <ul class="svc-card-list">
+          <li>Wiring diagnostics</li>
+          <li>Damaged harness repair</li>
+          <li>Connector replacement</li>
+          <li>Electrical fault repair</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 04 BMW Programming & Coding -->
+    <div class="svc-card" id="svc-programming">
+      <div class="svc-photo-placeholder"><img src="assets/services/programming.png" alt="BMW Programming &amp; Coding" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">BMW Programming &amp; Coding</h2>
+        <p class="svc-card-desc">BMW coding, module programming, software configuration, and vehicle customization.</p>
+        <ul class="svc-card-list">
+          <li>BMW coding</li>
+          <li>Module programming</li>
+          <li>Software configuration</li>
+          <li>Vehicle customization</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 05 Software Updates -->
+    <div class="svc-card" id="svc-software">
+      <div class="svc-photo-placeholder"><img src="assets/services/software.png" alt="Software Updates" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">Software Updates</h2>
+        <p class="svc-card-desc">BMW software updates, module updates, and system programming using factory-level tools.</p>
+        <ul class="svc-card-list">
+          <li>BMW software updates</li>
+          <li>Module updates</li>
+          <li>System programming</li>
+          <li>Factory-level tools</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 06 Module Programming -->
+    <div class="svc-card" id="svc-module-programming">
+      <div class="svc-photo-placeholder"><img src="assets/services/module-programming.jpg" alt="Module Programming" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">Module Programming</h2>
+        <p class="svc-card-desc">ECU programming, module replacement setup, coding, and software initialization.</p>
+        <ul class="svc-card-list">
+          <li>ECU programming</li>
+          <li>Module replacement setup</li>
+          <li>Coding</li>
+          <li>Software initialization</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 07 Key Programming -->
+    <div class="svc-card" id="svc-key-programming">
+      <div class="svc-photo-placeholder"><img src="assets/services/key-programming.png" alt="Key Programming" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">Key Programming</h2>
+        <p class="svc-card-desc">BMW and Mazda key programming, replacement keys, and key setup.</p>
+        <ul class="svc-card-list">
+          <li>BMW key programming</li>
+          <li>Mazda key programming</li>
+          <li>Replacement keys</li>
+          <li>Key setup</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 08 CarPlay Retrofits -->
+    <div class="svc-card" id="svc-carplay">
+      <div class="svc-photo-placeholder"><img src="assets/services/carplay.png" alt="CarPlay Retrofits" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">CarPlay Retrofits</h2>
+        <p class="svc-card-desc">Apple CarPlay activation, retrofits, coding, and multimedia upgrades.</p>
+        <ul class="svc-card-list">
+          <li>Apple CarPlay activation</li>
+          <li>Retrofits</li>
+          <li>Coding</li>
+          <li>Multimedia upgrades</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 09 Navigation Map Updates -->
+    <div class="svc-card" id="svc-navigation">
+      <div class="svc-photo-placeholder"><img src="assets/services/navigation.png" alt="Navigation Map Updates" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">Navigation Map Updates</h2>
+        <p class="svc-card-desc">BMW navigation map updates and multimedia system updates.</p>
+        <ul class="svc-card-list">
+          <li>BMW navigation map updates</li>
+          <li>Multimedia system updates</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 10 Headlight & Lighting Upgrades -->
+    <div class="svc-card" id="svc-headlights">
+      <div class="svc-photo-placeholder"><img src="assets/services/headlights.png" alt="Headlight &amp; Lighting Upgrades" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">Headlight &amp; Lighting Upgrades</h2>
+        <p class="svc-card-desc">Headlight installation, lighting retrofits, module setup, and LED upgrades.</p>
+        <ul class="svc-card-list">
+          <li>Headlight installation</li>
+          <li>Lighting retrofits</li>
+          <li>Module setup</li>
+          <li>LED upgrades</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 11 BMW Retrofits & Upgrades -->
+    <div class="svc-card" id="svc-retrofits">
+      <div class="svc-photo-placeholder"><img src="assets/services/retrofits.png" alt="BMW Retrofits &amp; Upgrades" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">BMW Retrofits &amp; Upgrades</h2>
+        <p class="svc-card-desc">OEM retrofit installation, BMW upgrades, coding, and feature activation.</p>
+        <ul class="svc-card-list">
+          <li>OEM retrofit installation</li>
+          <li>BMW upgrades</li>
+          <li>Coding</li>
+          <li>Feature activation</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================================================
+     PRE-PURCHASE INSPECTIONS
+     ==================================================== -->
+<section class="svc-category">
+  <div class="svc-category-label">Pre-Purchase Inspections</div>
+
+  <div class="svc-grid">
+    <div class="svc-card svc-card-wide" id="svc-ppi">
+      <div class="svc-photo-placeholder"><img src="assets/services/ppi.jpg" alt="Pre-Purchase Inspections" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">Pre-Purchase Inspections</h2>
+        <p class="svc-card-desc">Complete vehicle inspections before purchase, including diagnostics, mechanical inspection, and condition reports.</p>
+        <ul class="svc-card-list">
+          <li>Complete vehicle inspections</li>
+          <li>Full diagnostics</li>
+          <li>Mechanical inspection</li>
+          <li>Condition reports</li>
+        </ul>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- BRAKE SERVICES -->
-<div class="svc-section" id="brakes">
-  <div class="container">
-    <div class="svc-layout reverse">
-      <div class="svc-img-wrap">
-        <img class="svc-img"
-          src="assets/images/BRAKESERVICES.JPG"
-          alt="BMW brake service and inspection"
-          loading="lazy"/>
-      </div>
-      <div class="svc-content">
-        <span class="section-label">02 — Safety Critical</span>
-        <h2>Brake <em class="text-gold">Services</em></h2>
-        <div class="gold-line"></div>
-        <p>
-          Your braking system is the most critical safety component on your BMW. We offer comprehensive brake inspections, repairs, and replacements using high-quality OEM-grade parts that meet or exceed factory specifications.
-        </p>
-        <p>
-          Whether you're hearing brake squeal, feeling vibration through the pedal, or your BMW's DSC is flagging a fault — our experienced technicians will diagnose and resolve it with precision, providing you peace of mind and optimal braking performance.
-        </p>
-        <ul class="svc-features">
-          <li>Full brake pad and rotor inspection and measurement</li>
-          <li>Brake caliper service, rebuild, or replacement</li>
-          <li>Brake fluid flush and ABS bleeding service</li>
-          <li>BMW M Performance and Sport brake upgrades available</li>
-          <li>Electronic parking brake programming and service</li>
-          <li>DSC / brake warning light diagnosis and reset</li>
+<!-- ====================================================
+     EUROPEAN AUTO REPAIR
+     ==================================================== -->
+<section class="svc-category">
+  <div class="svc-category-label">European Auto Repair</div>
+
+  <div class="svc-grid">
+    <div class="svc-card svc-card-wide" id="svc-european">
+      <div class="svc-photo-placeholder"><img src="assets/services/european.png" alt="European Auto Repair" loading="lazy" decoding="async" /></div>
+      <div class="svc-card-body">
+        <h2 class="svc-card-title">European Auto Repair</h2>
+        <p class="svc-card-desc">Specialized repair and maintenance for BMW, MINI, Audi, Mercedes-Benz, Porsche, and other European vehicles.</p>
+        <ul class="svc-card-list">
+          <li>BMW &amp; MINI</li>
+          <li>Audi</li>
+          <li>Mercedes-Benz</li>
+          <li>Porsche</li>
+          <li>Other European vehicles</li>
         </ul>
-        <a href="specialist.html" class="btn btn-gold">Schedule Brake Service</a>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- A/C SERVICES -->
-<div class="svc-section" id="ac">
-  <div class="container">
-    <div class="svc-layout">
-      <div class="svc-img-wrap">
-        <img class="svc-img"
-          src="assets/images/A_C_Services.jpg"
-          alt="BMW air conditioning service"
-          loading="lazy"/>
-      </div>
-      <div class="svc-content">
-        <span class="section-label">03 — Climate Control</span>
-        <h2>A/C <em class="text-gold">Services</em></h2>
-        <div class="gold-line"></div>
-        <p>
-          South Florida heat demands a perfectly functioning climate system. Stay cool and comfortable with our expert BMW AC services. Our experienced technicians provide comprehensive AC maintenance, diagnostics, and repairs to ensure optimal performance year-round.
-        </p>
-        <p>
-          From simple refrigerant recharges to complete system rebuilds, we handle every component of your BMW's climate control with the same meticulous precision we apply to every service.
-        </p>
-        <ul class="svc-features">
-          <li>AC system pressure test and leak detection</li>
-          <li>Refrigerant evacuation, recharge, and R-1234yf service</li>
-          <li>Compressor, condenser, and evaporator replacement</li>
-          <li>BMW automatic climate control calibration</li>
-          <li>Cabin air filter and microfilter replacement</li>
-          <li>Blower motor and blend door actuator service</li>
-        </ul>
-        <a href="specialist.html" class="btn btn-gold">Schedule A/C Service</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- TUNE-UP -->
-<div class="svc-section" id="tuneup">
-  <div class="container">
-    <div class="svc-layout reverse">
-      <div class="svc-img-wrap">
-        <img class="svc-img"
-          src="assets/images/VEHICLETUNEUP.JPG"
-          alt="BMW engine tune-up service"
-          loading="lazy" style="height:auto;"/>
-      </div>
-      <div class="svc-content">
-        <span class="section-label">04 — Performance Restored</span>
-        <h2>Vehicle <em class="text-gold">Tune-Up</em></h2>
-        <div class="gold-line"></div>
-        <p>
-          Over time, even the finest BMW engines lose their edge as components wear. Our comprehensive tune-up service restores your engine's performance, efficiency, and response to factory-like condition.
-        </p>
-        <p>
-          We inspect and replace key components including spark plugs, air filters, and fuel filters, ensuring optimal engine performance. Regular tune-ups improve fuel efficiency, extend engine life, and prevent unexpected breakdowns before they happen.
-        </p>
-        <ul class="svc-features">
-          <li>OEM-specification spark plug inspection and replacement</li>
-          <li>Intake air filter and cabin filter replacement</li>
-          <li>Fuel filter and fuel injector service</li>
-          <li>Throttle body cleaning and idle calibration</li>
-          <li>Ignition coil inspection and fault code scan</li>
-          <li>Full engine health report with every tune-up</li>
-        </ul>
-        <a href="specialist.html" class="btn btn-gold">Schedule a Tune-Up</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- TRANSMISSION -->
-<div class="svc-section" id="transmission">
-  <div class="container">
-    <div class="svc-layout reverse">
-      <div class="svc-img-wrap">
-        <img class="svc-img"
-          src="assets/images/Transmission_Services.PNG"
-          alt="BMW transmission service and repair"
-          loading="lazy"/>
-      </div>
-      <div class="svc-content">
-        <span class="section-label">06 — Drivetrain Precision</span>
-        <h2>Transmission <em class="text-gold">Services</em></h2>
-        <div class="gold-line"></div>
-        <p>
-          The transmission is the bridge between your BMW's legendary engine and the road. Our expert technicians specialize in transmission repair, maintenance, and replacement — using advanced diagnostic tools to identify and resolve issues with precision.
-        </p>
-        <p>
-          From fluid changes on ZF 8-speed automatics to complete Getrag manual rebuilds, we provide reliable, lasting solutions to keep your car's transmission operating flawlessly for years to come.
-        </p>
-        <ul class="svc-features">
-          <li>Automatic and manual transmission fluid service</li>
-          <li>ZF 8-speed and 6-speed automatic rebuilds and repair</li>
-          <li>Getrag manual gearbox rebuild and synchro replacement</li>
-          <li>DSC / transmission fault code diagnosis</li>
-          <li>Transfer case and differential fluid service (xDrive)</li>
-          <li>Clutch replacement and flywheel resurfacing</li>
-        </ul>
-        <a href="specialist.html" class="btn btn-gold">Schedule Transmission Service</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- OIL CHANGE -->
-<div class="svc-section" id="oil">
-  <div class="container">
-    <div class="svc-layout">
-      <div class="svc-img-wrap">
-        <img class="svc-img"
-          src="assets/images/Oil_Change.jpg"
-          alt="BMW premium oil change service"
-          loading="lazy"/>
-      </div>
-      <div class="svc-content">
-        <span class="section-label">07 — Engine Protection</span>
-        <h2>Premium <em class="text-gold">Oil Change</em></h2>
-        <div class="gold-line"></div>
-        <p>
-          Not all oil changes are equal — and your BMW's engine demands the highest standard. We use BMW-approved motor oils including Castrol EDGE Professional and LIQUI MOLY Molygen, paired with genuine OEM oil filters, to ensure optimal engine protection and longevity.
-        </p>
-        <p>
-          Our expert technicians perform a thorough 25-point inspection with every oil change, covering all essential fluids, filters, and visual checks — delivering complete peace of mind with every visit.
-        </p>
-        <ul class="svc-features">
-          <li>BMW LL-01 and LL-04 approved synthetic motor oils</li>
-          <li>Genuine BMW or Mann-Filter OEM oil filter replacement</li>
-          <li>25-point full vehicle inspection included</li>
-          <li>Brake fluid, coolant, and power steering level check</li>
-          <li>Tire pressure set to factory specification</li>
-          <li>BMW OBC oil service reset and documentation</li>
-        </ul>
-        <a href="specialist.html" class="btn btn-gold">Schedule an Oil Change</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ALL MAJOR REPAIRS -->
-<div class="svc-section" id="repairs">
-  <div class="container">
-    <div class="svc-layout reverse">
-      <div class="svc-img-wrap">
-        <img class="svc-img"
-          src="assets/images/ALLMAJORREPAIRS.JPG"
-          alt="BMW major repair and diagnostics"
-          loading="lazy" style="height:auto;"/>
-      </div>
-      <div class="svc-content">
-        <span class="section-label">08 — Full Repair Capability</span>
-        <h2>All Major <em class="text-gold">Repairs</em></h2>
-        <div class="gold-line"></div>
-        <p>
-          When your BMW needs serious attention, BMW Service Miami has the expertise and tooling to handle it all. Our expert team handles everything from suspension rebuilds to complete electrical system diagnostics — ensuring your vehicle performs at its very best.
-        </p>
-        <p>
-          Using factory-level diagnostic software (ISTA) and professional workshop equipment, we approach every major repair with surgical precision. Drive with confidence knowing your car is in the most capable hands in South Florida.
-        </p>
-        <ul class="svc-features">
-          <li>Full suspension — control arms, bushings, shocks, struts</li>
-          <li>Electrical system diagnosis with BMW ISTA/DIS software</li>
-          <li>Engine mounts, timing chain, and VANOS service</li>
-          <li>Cooling system — water pump, thermostat, radiator</li>
-          <li>Power steering rack and pump replacement</li>
-          <li>Heating, ventilation, and complex electrical repairs</li>
-        </ul>
-        <a href="specialist.html" class="btn btn-gold">Describe Your Issue</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- TUNING & PERFORMANCE -->
-<div class="svc-section" id="tuning">
-  <div class="container">
-    <div class="svc-layout">
-      <div class="svc-img-wrap">
-        <img class="svc-img"
-          src="assets/images/tuning_and_preformance.PNG"
-          alt="BMW performance tuning"
-          loading="lazy"/>
-      </div>
-      <div class="svc-content">
-        <span class="section-label">09 — The Signature Service</span>
-        <h2>Tuning &amp; <em class="text-gold">Performance</em></h2>
-        <div class="gold-line"></div>
-        <p>
-          Decades of mastery don't happen overnight. Since 2023, our in-house tuner has been perfecting the art of BMW calibration — bringing surgical precision to every build, from refined daily street cars to the most ambitious performance builds in the region.
-        </p>
-        <p>
-          Whether you want a subtle efficiency remap or a full-race calibration with supporting modifications, we build a solution tailored to your exact goals. Every tune is developed on our in-house dyno and road-validated before leaving the shop.
-        </p>
-        <ul class="svc-features">
-          <li>ECU stage 1, 2, and 3 remapping (Bootmod3, MHD, BM3)</li>
-          <li>Power and torque upgrades with full drivetrain safety</li>
-          <li>Turbo, intercooler, downpipe, and intake upgrades</li>
-          <li>Dyno tuning and power measurement</li>
-          <li>Suspension lowering springs, coilovers, and anti-roll bars</li>
-          <li>Competition and track prep packages available</li>
-        </ul>
-        <a href="specialist.html" class="btn btn-gold">Discuss Your Build</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CTA Banner -->
-<section style="background:var(--bg-secondary);padding:90px 0;text-align:center;border-top:1px solid var(--border-gold);">
-  <div class="container">
-    <span class="section-label">Ready to Book?</span>
-    <h2 style="margin-bottom:1rem;">Talk to a <em class="text-gold">Specialist</em></h2>
-    <div class="gold-line center"></div>
-    <p style="max-width:480px;margin:0 auto 2.5rem;">
-      Tell us about your BMW. Our team will get back to you promptly to schedule your service appointment.
-    </p>
-    <a href="specialist.html" class="btn btn-gold">Contact Us Now</a>
-  </div>
+<!-- ====================================================
+     CTA
+     ==================================================== -->
+<section class="svc-cta">
+  <h2 class="svc-cta-title">Talk to a Specialist</h2>
+  <p class="svc-cta-desc">Tell us about your BMW. Our team will get back to you promptly to schedule your service appointment.</p>
+  <a href="specialist.html" class="svc-cta-btn">Contact Us Now</a>
 </section>
 
 <!-- Footer -->
 <footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-copy">&copy; 2025 BMW Service Miami · 2027 Grant St, Hollywood, FL 33020</div>
-      <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="media.html">Gallery</a></li>
-        <li><a href="community.html">NSL</a></li>
-        <li><a href="specialist.html">Contact</a></li>
-      </ul>
-      <div class="footer-credit">Built by <span>Xtatic Digital</span></div>
-    </div>
+  <div class="footer-inner">
+    <span>&copy; 2025 BMW Service Miami &middot; Hollywood, FL</span>
+    <span class="footer-credit">Built by Xtatic Digital</span>
   </div>
 </footer>
 

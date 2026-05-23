@@ -3,77 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Media &amp; Our Cars — BMW Service Miami</title>
-  <meta name="description" content="BMW Service Miami gallery — see the cars we work on, builds in progress, and completed repairs." />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/pages.css" />
+  <title>Media — BMW Service Miami</title>
+  <meta name="description" content="BMW Service Miami gallery — the cars we work on, builds in progress, and completed repairs in Hollywood, FL." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/redesign.css" />
+  <link rel="stylesheet" href="css/media.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
-  <script src="js/main.js" defer></script>
+  <script src="js/redesign.js" defer></script>
   <script src="js/gallery.js" defer></script>
-
-  <style>
-    /* Animated hero for media page */
-    .media-hero {
-      position: relative;
-      height: 68vh;
-      min-height: 420px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .media-hero-img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform-origin: center center;
-      animation: kenBurns 14s ease-in-out infinite alternate;
-    }
-    @keyframes kenBurns {
-      0%   { transform: scale(1)    translate(0, 0); }
-      33%  { transform: scale(1.08) translate(-1.5%, 0.8%); }
-      66%  { transform: scale(1.05) translate(1.2%, -1%); }
-      100% { transform: scale(1.10) translate(-0.5%, 1.2%); }
-    }
-    .media-hero-overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(to bottom, rgba(10,10,12,0.45) 0%, rgba(10,10,12,0.25) 50%, rgba(10,10,12,0.72) 100%);
-    }
-    .media-hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 0 1.5rem;
-    }
-    .media-hero-content h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: 1rem; }
-    .media-hero-content p  { max-width: 520px; margin: 0 auto; color: var(--text-secondary); font-size: 1rem; }
-
-    /* Extra media page styles */
-    .media-section { padding: 80px 0 120px; background: var(--bg-primary); }
-    .media-header  { margin-bottom: 3rem; }
-    .upload-notice {
-      margin-top: 5rem;
-      padding: 2rem;
-      border: 1px dashed var(--border-gold);
-      text-align: center;
-      background: var(--bg-card);
-    }
-    .upload-notice p { font-size:0.85rem; color:var(--text-muted); }
-    .upload-notice code {
-      display: inline-block;
-      background: rgba(201,168,76,0.08);
-      padding: 2px 8px;
-      color: var(--gold);
-      font-family: monospace;
-      font-size: 0.85rem;
-    }
-  </style>
 </head>
 <body>
 
@@ -82,447 +22,489 @@
   <div class="loader-brand">BMW Service Miami</div>
   <div class="loader-track"><div class="loader-fill"></div></div>
 </div>
-<div id="page-transition"></div>
-<div class="cursor-glow"></div>
 
 <!-- Navigation -->
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <div class="nav-logo-badge"><img src="assets/images/logo-m-white.png" alt="BMW M Logo"/></div>
-      <div>
-        <div class="nav-logo-name">BMW <span>Service Miami</span></div>
-        <div class="nav-logo-sub">Hollywood, FL · Est. 2023</div>
-      </div>
+      <img src="assets/images/logo-m-white.png" alt="BMW M Logo" class="nav-logo-img"/>
     </a>
-    <ul class="nav-links" id="navMenu">
+    <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
-      <li><a href="media.html">Media</a></li>
-      <li><a href="community.html" style="color:var(--red);">NSL Collective</a></li>
-      <li><a href="specialist.html" class="nav-cta">Talk to a Specialist</a></li>
+      <li><a href="media.html" class="active">Media</a></li>
+      <li><a href="community.html">NSL</a></li>
+      <li><a href="specialist.html">Service Portal</a></li>
     </ul>
     <div class="hamburger" id="hamburger" role="button" aria-label="Open Menu" tabindex="0">
       <span></span><span></span><span></span>
     </div>
   </div>
+  <div class="nav-line"></div>
 </nav>
 
-<!-- Page Hero — animated hero2 image -->
-<div class="media-hero">
-  <img class="media-hero-img" src="assets/images/HEROIMAGE.png" alt="BMW Service Miami" />
-  <div class="media-hero-overlay"></div>
-  <div class="media-hero-content">
-    <span class="section-label">Media</span>
-    <h1>Our <em class="text-gold">Cars</em> &amp; Work</h1>
-    <div class="gold-line center"></div>
-    <p>A showcase of the BMWs that come through our shop — from daily drivers to performance builds. Click any image or video to expand.</p>
+<div class="media-page">
+
+  <!-- Glowing red orbs — biggest anchored top-right, scrolling with the page -->
+  <div class="orb-field" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+    <div class="orb orb-5"></div>
+    <div class="orb orb-6"></div>
+    <div class="orb orb-7"></div>
+    <div class="orb orb-8"></div>
   </div>
-</div>
 
-<!-- Gallery -->
-<section class="media-section">
-  <div class="container">
+  <!-- Hero -->
+  <header class="media-hero">
+    <span class="media-kicker">Gallery</span>
+    <h1 class="media-title">Our Cars <em>&amp;</em> Work</h1>
+    <p class="media-intro">A showcase of the BMWs that come through our shop — daily drivers, performance builds, and completed repairs. Click any image or video to expand.</p>
+  </header>
 
-    <div class="media-header">
-      <div class="gallery-controls">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="photo">Photos</button>
-        <button class="filter-btn" data-filter="video">Videos</button>
-      </div>
-    </div>
+  <!-- Gallery -->
+  <section class="media-gallery-section">
+    <div class="media-gallery" id="gallery">
 
-    <!-- Gallery Grid
-         To add your own images: replace the src values with your file paths
-         e.g. src="assets/images/my-car.jpg"
-         To add your own videos: add gallery-item elements with data-type="video"
-         and data-src="assets/videos/my-video.mp4"
-    -->
-    <div class="gallery-grid" id="gallery">
-
-      <!-- Client photos — most recent (April 2026) — shown first -->
       <div class="gallery-item" data-type="photo" data-src="assets/images/39.JPEG" data-alt="BMW Service Miami">
-        <img src="assets/images/39.JPEG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/39.JPEG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/38.JPEG" data-alt="BMW Service Miami">
-        <img src="assets/images/38.JPEG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/38.JPEG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/37.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/37.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/37.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/36.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/36.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/36.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/35.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/35.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/35.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/34.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/34.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/34.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/33.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/33.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/33.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/32.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/32.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/32.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/31.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/31.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/31.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/30.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/30.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/30.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/29.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/29.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/29.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/27.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/27.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/27.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/26.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/26.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/26.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/25.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/25.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/25.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/24.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/24.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/24.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/23.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/23.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/23.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/22.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/22.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/22.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/21.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/21.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/21.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/16.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/16.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/16.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/14.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/14.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/14.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/13.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/13.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/13.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/12.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/12.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/12.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/11.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/11.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/11.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/10.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/10.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/10.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/8.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/8.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/8.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/7.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/7.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/7.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/5.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/5.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/5.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/4.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/4.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/4.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/3.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/3.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/3.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/2.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/2.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/2.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/1.JPG" data-alt="BMW Service Miami">
-        <img src="assets/images/1.JPG" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/1.JPG" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
-      <!-- Previous gallery photos -->
       <div class="gallery-item" data-type="photo" data-src="assets/images/hero.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/hero.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/hero.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3192.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3192.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3192.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3194.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3194.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3194.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/ScreenRecording_03-24-2026%2018-07-47_1.mp4" data-alt="BMW Service Miami">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/ScreenRecording_03-24-2026%2018-07-47_1.mp4" type="video/mp4"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/ScreenRecording_03-24-2026%2018-07-47_1.mp4" data-alt="BMW Service Miami">
+        <video muted preload="metadata"><source src="assets/videos/ScreenRecording_03-24-2026%2018-07-47_1.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3195.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3195.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3195.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3196.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3196.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3196.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3197.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3197.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3197.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/ScreenRecording_03-24-2026%2018-09-11_1.mp4" data-alt="BMW Service Miami">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/ScreenRecording_03-24-2026%2018-09-11_1.mp4" type="video/mp4"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/ScreenRecording_03-24-2026%2018-09-11_1.mp4" data-alt="BMW Service Miami">
+        <video muted preload="metadata"><source src="assets/videos/ScreenRecording_03-24-2026%2018-09-11_1.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3198.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3198.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3198.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3199.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3199.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3199.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3203.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3203.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3203.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/ScreenRecording_03-24-2026%2018-09-39_1.mp4" data-alt="BMW Service Miami">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/ScreenRecording_03-24-2026%2018-09-39_1.mp4" type="video/mp4"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/ScreenRecording_03-24-2026%2018-09-39_1.mp4" data-alt="BMW Service Miami">
+        <video muted preload="metadata"><source src="assets/videos/ScreenRecording_03-24-2026%2018-09-39_1.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3206.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3206.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3206.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3209.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3209.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3209.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/ScreenRecording_03-24-2026%2018-10-45_1.mp4" data-alt="BMW Service Miami">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/ScreenRecording_03-24-2026%2018-10-45_1.mp4" type="video/mp4"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/ScreenRecording_03-24-2026%2018-10-45_1.mp4" data-alt="BMW Service Miami">
+        <video muted preload="metadata"><source src="assets/videos/ScreenRecording_03-24-2026%2018-10-45_1.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/gellery.png" data-alt="BMW Service Miami">
-        <img src="assets/images/gellery.png" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/gellery.png" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3211.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3211.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3211.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/ScreenRecording_03-24-2026%2018-12-05_1.mp4" data-alt="BMW Service Miami">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/ScreenRecording_03-24-2026%2018-12-05_1.mp4" type="video/mp4"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/ScreenRecording_03-24-2026%2018-12-05_1.mp4" data-alt="BMW Service Miami">
+        <video muted preload="metadata"><source src="assets/videos/ScreenRecording_03-24-2026%2018-12-05_1.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3216.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3216.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3216.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3222.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3222.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3222.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/ScreenRecording_03-24-2026%2018-12-27_1.mp4" data-alt="BMW Service Miami">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/ScreenRecording_03-24-2026%2018-12-27_1.mp4" type="video/mp4"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/ScreenRecording_03-24-2026%2018-12-27_1.mp4" data-alt="BMW Service Miami">
+        <video muted preload="metadata"><source src="assets/videos/ScreenRecording_03-24-2026%2018-12-27_1.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3225.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3225.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3225.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3226.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3226.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3226.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/ScreenRecording_03-24-2026%2018-13-32_1.mp4" data-alt="BMW Service Miami">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/ScreenRecording_03-24-2026%2018-13-32_1.mp4" type="video/mp4"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/ScreenRecording_03-24-2026%2018-13-32_1.mp4" data-alt="BMW Service Miami">
+        <video muted preload="metadata"><source src="assets/videos/ScreenRecording_03-24-2026%2018-13-32_1.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/image.png" data-alt="BMW Service Miami">
-        <img src="assets/images/image.png" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/image.png" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3227.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3227.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3227.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3228.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3228.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3228.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/ScreenRecording_03-24-2026%2018-13-50_1.mp4" data-alt="BMW Service Miami">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/ScreenRecording_03-24-2026%2018-13-50_1.mp4" type="video/mp4"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/ScreenRecording_03-24-2026%2018-13-50_1.mp4" data-alt="BMW Service Miami">
+        <video muted preload="metadata"><source src="assets/videos/ScreenRecording_03-24-2026%2018-13-50_1.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3229.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3229.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3229.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/IMG_3230.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/IMG_3230.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/IMG_3230.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/add_to_gallery.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/add_to_gallery.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/add_to_gallery.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/add_to_gallery7.mp4" data-alt="BMW Service Miami">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/add_to_gallery7.mp4" type="video/mp4"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/add_to_gallery7.mp4" data-alt="BMW Service Miami">
+        <video muted preload="metadata"><source src="assets/videos/add_to_gallery7.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/add_to_gallery1.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/add_to_gallery1.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/add_to_gallery1.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/add_to_gallery8.mp4" data-alt="BMW Service Miami">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/add_to_gallery8.mp4" type="video/mp4"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/add_to_gallery8.mp4" data-alt="BMW Service Miami">
+        <video muted preload="metadata"><source src="assets/videos/add_to_gallery8.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
       </div>
 
       <div class="gallery-item" data-type="photo" data-src="assets/images/add_to_gallery2.jpg" data-alt="BMW Service Miami">
-        <img src="assets/images/add_to_gallery2.jpg" alt="BMW Service Miami" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <img src="assets/images/add_to_gallery2.jpg" alt="BMW Service Miami" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
       </div>
 
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/add_to_gallery44.mp4" data-alt="BMW Service Miami">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/add_to_gallery44.mp4" type="video/mp4"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/add_to_gallery44.mp4" data-alt="BMW Service Miami">
+        <video muted preload="metadata"><source src="assets/videos/add_to_gallery44.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
       </div>
 
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/add_to_gallery3.mov" data-alt="BMW Service Miami">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/add_to_gallery3.mov" type="video/quicktime"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/add_to_gallery3.mov" data-alt="BMW Service Miami">
+        <video muted preload="metadata"><source src="assets/videos/add_to_gallery3.mov" type="video/quicktime"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
+      </div>
+
+      <div class="gallery-item" data-type="photo" data-src="assets/images/add_to_NSL-collective1.jpg" data-alt="NSL Collective">
+        <img src="assets/images/add_to_NSL-collective1.jpg" alt="NSL Collective" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
+      </div>
+
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/NSL-collective1.mp4" data-alt="NSL Collective">
+        <video muted preload="metadata"><source src="assets/videos/NSL-collective1.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
+      </div>
+
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/NSL-collective3.mp4" data-alt="NSL Collective">
+        <video muted preload="metadata"><source src="assets/videos/NSL-collective3.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
+      </div>
+
+      <div class="gallery-item" data-type="photo" data-src="assets/images/add_to_NSL_collective2.PNG" data-alt="NSL Collective">
+        <img src="assets/images/add_to_NSL_collective2.PNG" alt="NSL Collective" loading="lazy" decoding="async"/>
+        <div class="gallery-overlay"></div>
+      </div>
+
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/NSL-collective4.mp4" data-alt="NSL Collective">
+        <video muted preload="metadata"><source src="assets/videos/NSL-collective4.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
+      </div>
+
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/NSL-collective5.mp4" data-alt="NSL Collective">
+        <video muted preload="metadata"><source src="assets/videos/NSL-collective5.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
+      </div>
+
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/NSL-collective6.mp4" data-alt="NSL Collective">
+        <video muted preload="metadata"><source src="assets/videos/NSL-collective6.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
+      </div>
+
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/NSL-collective7.mp4" data-alt="NSL Collective">
+        <video muted preload="metadata"><source src="assets/videos/NSL-collective7.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
+      </div>
+
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/NSL-collective8.mp4" data-alt="NSL Collective">
+        <video muted preload="metadata"><source src="assets/videos/NSL-collective8.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
+      </div>
+
+      <div class="gallery-item is-video" data-type="video" data-src="assets/videos/NSL-collective9.mp4" data-alt="NSL Collective">
+        <video muted preload="metadata"><source src="assets/videos/NSL-collective9.mp4" type="video/mp4"></video>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-play" aria-hidden="true"></div>
       </div>
 
     </div><!-- /#gallery -->
+  </section>
 
+  <!-- CTA -->
+  <section class="media-cta">
+    <span class="media-kicker">Want Your Car Here?</span>
+    <h2 class="media-cta-title">Bring Your <em>BMW</em> In</h2>
+    <p class="media-cta-desc">Schedule a service appointment and let us give your BMW the attention it deserves.</p>
+    <a href="specialist.html" class="media-cta-btn">Talk to a Specialist</a>
+  </section>
+
+</div><!-- /.media-page -->
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <span>&copy; 2025 BMW Service Miami &middot; Hollywood, FL</span>
+    <span class="footer-credit">Built by Xtatic Digital</span>
   </div>
-</section>
+</footer>
 
-<!-- Lightbox Structure -->
+<!-- Lightbox -->
 <div id="lightbox">
   <div class="lightbox-content"></div>
   <button class="lb-prev" aria-label="Previous">&#8592;</button>
   <button class="lb-next" aria-label="Next">&#8594;</button>
 </div>
-
-<!-- CTA -->
-<section style="background:var(--bg-secondary);padding:80px 0;text-align:center;border-top:1px solid var(--border-gold);">
-  <div class="container">
-    <span class="section-label">Want Your Car Here?</span>
-    <h2 style="margin-bottom:1rem;">Bring Your <em class="text-gold">BMW</em> In</h2>
-    <div class="gold-line center"></div>
-    <p style="max-width:440px;margin:0 auto 2.5rem;">
-      Schedule a service appointment and let us give your BMW the attention it deserves.
-    </p>
-    <a href="specialist.html" class="btn btn-gold">Talk to a Specialist</a>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-copy">&copy; 2025 BMW Service Miami · 2027 Grant St, Hollywood, FL 33020</div>
-      <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="media.html">Gallery</a></li>
-        <li><a href="community.html">NSL</a></li>
-        <li><a href="specialist.html">Contact</a></li>
-      </ul>
-      <div class="footer-credit">Built by <span>Xtatic Digital</span></div>
-    </div>
-  </div>
-</footer>
 
 </body>
 </html>

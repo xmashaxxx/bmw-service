@@ -1,0 +1,247 @@
+/* ============================================
+   BMW SERVICE MIAMI — SERVICES PAGE
+   Editorial masonry grid with BMW-color frame accents
+   ============================================ */
+
+/* --- Page Header --- */
+.svc-header {
+  padding: 10rem 3rem 4rem;
+  text-align: center;
+  background: #000;
+}
+.svc-page-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+.svc-page-intro {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* --- Category Sections --- */
+.svc-category {
+  padding: 0 3rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.svc-category-label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--red-bright);
+  padding: 3rem 0 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 3rem;
+}
+
+/* --- Service Grid (asymmetric magazine masonry) --- */
+.svc-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* The two-column block JS builds below the feature card */
+.svc-masonry {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+.svc-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  min-width: 0;
+}
+.svc-col.is-wide { flex: 1.7; }
+.svc-col.is-narrow { flex: 1; }
+
+/* --- Service Card --- */
+.svc-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  scroll-margin-top: 6rem;
+}
+
+.svc-card-wide {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Full-width feature card that leads each section */
+.svc-feature {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.svc-feature.is-flipped .svc-photo-placeholder { order: 2; }
+
+/* --- Photo Placeholder --- */
+.svc-photo-placeholder {
+  position: relative;
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+}
+
+.svc-photo-placeholder img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Bold two-side frame accent — cycles through BMW red / blue / white */
+.svc-card:nth-child(3n+1) { --svc-accent: var(--red); }
+.svc-card:nth-child(3n+2) { --svc-accent: #2e9be6; }
+.svc-card:nth-child(3n)   { --svc-accent: #ffffff; }
+
+.svc-photo-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-top: 6px solid var(--svc-accent, var(--red));
+  border-left: 6px solid var(--svc-accent, var(--red));
+  pointer-events: none;
+}
+
+/* Alternate cards: frame the opposite two sides */
+.svc-card:nth-child(even) .svc-photo-placeholder::before {
+  border-top: none;
+  border-left: none;
+  border-right: 6px solid var(--svc-accent, var(--red));
+  border-bottom: 6px solid var(--svc-accent, var(--red));
+}
+
+/* --- Card Body --- */
+.svc-card-body {
+  padding: 0;
+}
+
+.svc-card-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+.svc-card-desc {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+}
+
+.svc-card-list {
+  list-style: none;
+  padding: 0;
+}
+
+.svc-card-list li {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  padding: 0.35rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.svc-card-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--red);
+  font-weight: 400;
+}
+
+/* --- CTA Section --- */
+.svc-cta {
+  text-align: center;
+  padding: 5rem 3rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.svc-cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.svc-cta-desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  max-width: 460px;
+  margin: 0 auto 2.5rem;
+}
+
+.svc-cta-btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--red);
+  padding: 1rem 2.5rem;
+  border: 1px solid var(--red);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.svc-cta-btn:hover {
+  background: transparent;
+  color: var(--red-bright);
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .svc-header { padding: 8rem 1.5rem 3rem; }
+
+  .svc-category { padding: 0 1.5rem 3rem; }
+  .svc-category-label { padding: 2rem 0 1.5rem; margin-bottom: 2rem; }
+
+  .svc-card-wide {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-feature {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .svc-cta { padding: 3rem 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .svc-page-title { font-size: 2.6rem; }
+  .svc-card-title { font-size: 1.55rem; }
+}

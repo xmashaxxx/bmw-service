@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NSL Collective — Not So Legal · BMW Service Miami</title>
-  <meta name="description" content="NSL Collective — Not So Legal. South Florida's underground drift community. Built on passion, fueled by adrenaline. Come drift with us." />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/pages.css" />
+  <meta name="description" content="NSL Collective — Not So Legal. South Florida's underground drift community. Built on passion, fueled by adrenaline. Come slide with us." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/redesign.css" />
+  <link rel="stylesheet" href="css/community.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
-  <script src="js/main.js" defer></script>
-  <script src="js/gallery.js" defer></script>
-  <script src="js/community.js" defer></script>
+  <script src="js/redesign.js" defer></script>
 </head>
 <body>
 
@@ -21,70 +21,45 @@
   <div class="loader-brand">NSL Collective</div>
   <div class="loader-track"><div class="loader-fill"></div></div>
 </div>
-<div id="page-transition"></div>
-<div class="cursor-glow"></div>
 
 <!-- Navigation -->
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <div class="nav-logo-badge"><img src="assets/images/logo-m-white.png" alt="BMW M Logo"/></div>
-      <div>
-        <div class="nav-logo-name">BMW <span>Service Miami</span></div>
-        <div class="nav-logo-sub">Hollywood, FL · Est. 2023</div>
-      </div>
+      <img src="assets/images/logo-m-white.png" alt="BMW M Logo" class="nav-logo-img"/>
     </a>
-    <ul class="nav-links" id="navMenu">
+    <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="media.html">Media</a></li>
-      <li><a href="community.html" style="color:var(--red);">NSL Collective</a></li>
-      <li><a href="specialist.html" class="nav-cta">Talk to a Specialist</a></li>
+      <li><a href="community.html" class="active">NSL</a></li>
+      <li><a href="specialist.html">Service Portal</a></li>
     </ul>
     <div class="hamburger" id="hamburger" role="button" aria-label="Open Menu" tabindex="0">
       <span></span><span></span><span></span>
     </div>
   </div>
+  <div class="nav-line"></div>
 </nav>
 
 <!-- ====================================================
-     NSL HERO
+     HERO
      ==================================================== -->
 <section class="nsl-hero" id="nsl-hero">
-  <div class="nsl-hero-bg"></div>
-  <div class="nsl-hero-grid"></div>
-
-  <!--
-    HERO VIDEO: Drop your drift/community video at assets/videos/nsl-hero.mp4
-    Then uncomment below and remove nsl-hero-bg above.
-  -->
-  <!--
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="assets/videos/nsl-hero.mp4" type="video/mp4">
-  </video>
-  -->
-
-  <div class="nsl-hero-overlay"></div>
-
   <div class="nsl-hero-content">
-    <div class="nsl-tag">South Florida · Drift Collective · Est. 2001</div>
+    <div class="nsl-tag">South Florida &nbsp;·&nbsp; Drift Collective</div>
 
     <div class="nsl-wordmark">
       <span class="nsl-n">N</span><span class="nsl-s">S</span><span class="nsl-l">L</span>
     </div>
 
-    <div class="nsl-full-name">
-      <span>Not So Legal</span> &nbsp;·&nbsp; Collective
-    </div>
+    <div class="nsl-full-name"><span>Not So Legal</span> &nbsp;·&nbsp; Collective</div>
 
-    <p class="nsl-tagline">
-      "Where the rules are suggestions and the passion is<br>everything but optional."
-    </p>
+    <p class="nsl-tagline">"Where the rules are suggestions and the passion is everything but optional."</p>
 
     <div class="nsl-hero-btns">
-      <a href="#join" class="btn btn-red">Join the Collective</a>
-      <a href="#gallery" class="btn btn-outline-blue">See the Builds</a>
-      <a href="specialist.html" class="btn btn-outline">Book a Build</a>
+      <a href="#join" class="nsl-btn nsl-btn-red">Join the Collective</a>
+      <a href="specialist.html" class="nsl-btn nsl-btn-ghost">Book a Build</a>
     </div>
   </div>
 
@@ -95,262 +70,112 @@
 </section>
 
 <!-- ====================================================
-     ABOUT THE COMMUNITY
+     BLOCK 01 — WHO WE ARE
      ==================================================== -->
-<section class="nsl-about" id="about-nsl">
-  <div class="container">
-    <div class="nsl-about-inner">
-
-      <div class="nsl-about-img">
-        <!--
-          Replace with a real drift/community photo.
-          Recommended: action shot, smoke, cars lined up, or group photo.
-        -->
-        <img
-          src="assets/images/More_than.jpg"
-          alt="NSL Collective — drift community South Florida"
-          loading="lazy"
-        />
-      </div>
-
-      <div class="nsl-about-text">
-        <span class="section-label" style="color:var(--red-light);">Who We Are</span>
-        <h2>More Than a Shop.<br><em style="color:var(--red);">We're a Brotherhood.</em></h2>
-        <div class="nsl-divider"></div>
-
-        <p>
-          This isn't just a luxury car repair shop. BMW Service Miami is a <strong style="color:var(--text-primary);">community</strong> — a tight-knit group of builders, drivers, and enthusiasts who got into this not for the business, but for the love of it. The thrill of it. The obsession.
-        </p>
-        <p>
-          Our owner doesn't just fix BMWs. He <em style="color:var(--text-primary);">rebuilds them from the inside out</em> — reshaping machines into something the factory could have never imagined. Every build is personal. Every tune tells a story. And every car that leaves this shop carries a piece of that relentless drive.
-        </p>
-        <p>
-          We are the <strong style="color:var(--red);">NSL Collective</strong> — Not So Legal. A group of people who live sideways, think sideways, and build sideways. We show up on weekends not because we have to, but because there is nowhere else on Earth we'd rather be. The smoke, the noise, the brotherhood — that's not a job. That's a lifestyle.
-        </p>
-        <p style="color:var(--bmw-blue); font-style:italic; font-family:var(--font-heading); font-size:1.05rem;">
-          "We know how to work hard. We know better how to have fun."
-        </p>
-
-        <div class="nsl-stats">
-          <div class="nsl-stat">
-            <span class="nsl-stat-num red">20+</span>
-            <span class="nsl-stat-label">Years Building</span>
-          </div>
-          <div class="nsl-stat">
-            <span class="nsl-stat-num blue">∞</span>
-            <span class="nsl-stat-label">Passion</span>
-          </div>
-          <div class="nsl-stat">
-            <span class="nsl-stat-num gold">1</span>
-            <span class="nsl-stat-label">Community</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ====================================================
-     THE BUILDS — DRIFT MEDIA GALLERY
-     ==================================================== -->
-<section class="nsl-media" id="gallery">
-  <div class="container">
-    <div class="nsl-media-header">
-      <span class="section-label" style="color:var(--red-light);">The Builds &amp; The Drift</span>
-      <h2>Moments That <em style="color:var(--red);">Don't</em> Stay <em style="color:var(--bmw-blue);">Quiet</em></h2>
-      <div class="nsl-divider"></div>
-      <p style="max-width:520px;margin:0 auto;">
-        Photos and videos of our builds, our events, and our community in action. Click to expand. Add yours to the collection.
+<section class="nsl-block">
+  <div class="nsl-block-text">
+    <div class="nsl-block-eyebrow">The Community</div>
+    <div class="nsl-bigword">Who We <span class="accent">Are</span></div>
+    <div class="nsl-block-panel">
+      <h2 class="nsl-block-heading">More Than a Shop — <em>We're a Brotherhood.</em></h2>
+      <p class="nsl-block-desc">
+        BMW Service Miami isn't just a luxury repair shop — it's a <strong>community</strong>. A tight-knit group of builders, drivers, and enthusiasts who got into this not for the business, but for the love of it. The thrill of it. The obsession. Every build is personal, and every car that leaves carries a piece of that relentless drive.
       </p>
+      <div class="nsl-block-third nsl-stats">
+        <div class="nsl-stat">
+          <span class="nsl-stat-num">20+</span>
+          <span class="nsl-stat-label">Years Building</span>
+        </div>
+        <div class="nsl-stat">
+          <span class="nsl-stat-num">&#8734;</span>
+          <span class="nsl-stat-label">Passion</span>
+        </div>
+        <div class="nsl-stat">
+          <span class="nsl-stat-num">1</span>
+          <span class="nsl-stat-label">Community</span>
+        </div>
+      </div>
     </div>
-
-    <!--
-      BENTO-STYLE MEDIA GRID
-      ─────────────────────────────────────────────
-      To add your own media:
-      1. Drop files into  assets/images/  or  assets/videos/
-      2. Replace the src values below
-      3. data-src  = full-size URL for the lightbox
-      4. data-type = "photo" or "video"
-      ─────────────────────────────────────────────
-    -->
-      <div class="nsl-grid" id="nsl-gallery">
-
-        <!-- NLS!.jpg — new client photo -->
-        <div class="nsl-grid-item gallery-item span-2-col" data-type="photo" data-src="assets/images/NLS!.jpg" data-alt="NSL Collective">
-          <img src="assets/images/NLS!.jpg" alt="NSL Collective" style="width:100%;height:100%;min-height:280px;object-fit:cover;display:block;" loading="lazy"/>
-          <div class="nsl-grid-overlay"><span>NSL · Collective</span></div>
-        </div>
-
-        <!-- NSLCOLLECTIVE.JPG — new client photo -->
-        <div class="nsl-grid-item gallery-item span-2-col" data-type="photo" data-src="assets/images/NSLCOLLECTIVE.JPG" data-alt="NSL Collective">
-          <img src="assets/images/NSLCOLLECTIVE.JPG" alt="NSL Collective" style="width:100%;height:100%;min-height:280px;object-fit:cover;display:block;" loading="lazy"/>
-          <div class="nsl-grid-overlay"><span>NSL · Collective</span></div>
-        </div>
-
-        <!-- Featured wide: NSL-collective1 -->
-        <div class="nsl-grid-item span-2-col gallery-item" data-type="video" data-src="assets/videos/NSL-collective1.mp4" data-alt="NSL Collective">
-          <video muted preload="metadata" style="pointer-events:none;width:100%;height:100%;min-height:320px;object-fit:cover;display:block;"><source src="assets/videos/NSL-collective1.mp4" type="video/mp4"></video>
-          <div class="nsl-play-btn"><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="29" fill="rgba(212,43,43,0.6)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/><polygon points="24,18 44,30 24,42" fill="white"/></svg></div>
-          <div class="nsl-grid-overlay"><span>NSL · Collective</span></div>
-        </div>
-
-        <!-- Tall right column: NSL-collective4 -->
-        <div class="nsl-grid-item span-2-row gallery-item" data-type="video" data-src="assets/videos/NSL-collective4.mp4" data-alt="NSL Collective">
-          <video muted preload="metadata" style="pointer-events:none;width:100%;height:100%;min-height:320px;object-fit:cover;display:block;"><source src="assets/videos/NSL-collective4.mp4" type="video/mp4"></video>
-          <div class="nsl-play-btn"><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="29" fill="rgba(28,105,212,0.6)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/><polygon points="24,18 44,30 24,42" fill="white"/></svg></div>
-          <div class="nsl-grid-overlay"><span>NSL · Build</span></div>
-        </div>
-
-        <!-- NSL-collective3 -->
-        <div class="nsl-grid-item gallery-item" data-type="video" data-src="assets/videos/NSL-collective3.mp4" data-alt="NSL Collective">
-          <video muted preload="metadata" style="pointer-events:none;width:100%;height:100%;min-height:280px;object-fit:cover;display:block;"><source src="assets/videos/NSL-collective3.mp4" type="video/mp4"></video>
-          <div class="nsl-play-btn"><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="29" fill="rgba(212,43,43,0.6)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/><polygon points="24,18 44,30 24,42" fill="white"/></svg></div>
-          <div class="nsl-grid-overlay"><span>NSL · Drift</span></div>
-        </div>
-
-        <!-- NSL-collective5 -->
-        <div class="nsl-grid-item gallery-item" data-type="video" data-src="assets/videos/NSL-collective5.mp4" data-alt="NSL Collective">
-          <video muted preload="metadata" style="pointer-events:none;width:100%;height:100%;min-height:280px;object-fit:cover;display:block;"><source src="assets/videos/NSL-collective5.mp4" type="video/mp4"></video>
-          <div class="nsl-play-btn"><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="29" fill="rgba(28,105,212,0.6)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/><polygon points="24,18 44,30 24,42" fill="white"/></svg></div>
-          <div class="nsl-grid-overlay"><span>NSL · Run</span></div>
-        </div>
-
-        <!-- NSL-collective6 normal -->
-        <div class="nsl-grid-item gallery-item" data-type="video" data-src="assets/videos/NSL-collective6.mp4" data-alt="NSL Collective">
-          <video muted preload="metadata" style="pointer-events:none;width:100%;height:100%;min-height:280px;object-fit:cover;display:block;"><source src="assets/videos/NSL-collective6.mp4" type="video/mp4"></video>
-          <div class="nsl-play-btn"><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="29" fill="rgba(212,43,43,0.6)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/><polygon points="24,18 44,30 24,42" fill="white"/></svg></div>
-          <div class="nsl-grid-overlay"><span>NSL · Street</span></div>
-        </div>
-
-        <!-- NSL-collective7 wide feature -->
-        <div class="nsl-grid-item span-2-col gallery-item" data-type="video" data-src="assets/videos/NSL-collective7.mp4" data-alt="NSL Collective">
-          <video muted preload="metadata" style="pointer-events:none;width:100%;height:100%;min-height:320px;object-fit:cover;display:block;"><source src="assets/videos/NSL-collective7.mp4" type="video/mp4"></video>
-          <div class="nsl-play-btn"><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="29" fill="rgba(28,105,212,0.6)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/><polygon points="24,18 44,30 24,42" fill="white"/></svg></div>
-          <div class="nsl-grid-overlay"><span>NSL · Feature</span></div>
-        </div>
-
-        <!-- NSL-collective8 -->
-        <div class="nsl-grid-item gallery-item" data-type="video" data-src="assets/videos/NSL-collective8.mp4" data-alt="NSL Collective">
-          <video muted preload="metadata" style="pointer-events:none;width:100%;height:100%;min-height:280px;object-fit:cover;display:block;"><source src="assets/videos/NSL-collective8.mp4" type="video/mp4"></video>
-          <div class="nsl-play-btn"><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="29" fill="rgba(212,43,43,0.6)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/><polygon points="24,18 44,30 24,42" fill="white"/></svg></div>
-          <div class="nsl-grid-overlay"><span>NSL · Community</span></div>
-        </div>
-
-        <!-- NSL-collective9 -->
-        <div class="nsl-grid-item gallery-item" data-type="video" data-src="assets/videos/NSL-collective9.mp4" data-alt="NSL Collective">
-          <video muted preload="metadata" style="pointer-events:none;width:100%;height:100%;min-height:280px;object-fit:cover;display:block;"><source src="assets/videos/NSL-collective9.mp4" type="video/mp4"></video>
-          <div class="nsl-play-btn"><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="29" fill="rgba(28,105,212,0.6)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/><polygon points="24,18 44,30 24,42" fill="white"/></svg></div>
-          <div class="nsl-grid-overlay"><span>NSL · Passion</span></div>
-        </div>
-
-        <!-- add_to_NSL-collective1 -->
-        <div class="nsl-grid-item gallery-item span-2-col" data-type="photo" data-src="assets/images/add_to_NSL-collective1.jpg" data-alt="NSL Collective">
-          <img src="assets/images/add_to_NSL-collective1.jpg" alt="NSL Collective" style="width:100%;height:100%;min-height:280px;object-fit:cover;display:block;" loading="lazy"/>
-          <div class="nsl-grid-overlay"><span>NSL · Collective</span></div>
-        </div>
-
-        <!-- add_to_NSL_collective2 -->
-        <div class="nsl-grid-item gallery-item" data-type="photo" data-src="assets/images/add_to_NSL_collective2.PNG" data-alt="NSL Collective">
-          <img src="assets/images/add_to_NSL_collective2.PNG" alt="NSL Collective" style="width:100%;height:100%;min-height:280px;object-fit:cover;display:block;" loading="lazy"/>
-          <div class="nsl-grid-overlay"><span>NSL · Build</span></div>
-        </div>
-
-
-      </div><!-- /.nsl-grid -->
-
+  </div>
+  <div class="nsl-block-photo">
+    <img src="assets/images/More_than.jpg" alt="NSL Collective — the community" loading="lazy" decoding="async"/>
   </div>
 </section>
 
 <!-- ====================================================
-     JOIN THE COLLECTIVE — CTA
+     BLOCK 02 — THE COLLECTIVE
      ==================================================== -->
-<section class="nsl-cta" id="join">
-  <div class="nsl-cta-inner">
-    <span class="section-label" style="color:var(--red-light);">The Invitation</span>
-    <h2>
-      Come <em style="color:var(--red);">Slide</em> With <em style="color:var(--bmw-blue);">Us</em>
-    </h2>
-
-    <div class="nsl-color-bar">
-      <span></span><span></span><span></span>
+<section class="nsl-block nsl-block--blue is-flipped">
+  <div class="nsl-block-text">
+    <div class="nsl-block-eyebrow">The Crew</div>
+    <div class="nsl-bigword">The <span class="accent">Collective</span></div>
+    <div class="nsl-block-panel">
+      <h2 class="nsl-block-heading">Live Sideways. <em>Build Sideways.</em></h2>
+      <p class="nsl-block-desc">
+        We are the <strong>NSL Collective</strong> — Not So Legal. People who show up on weekends not because they have to, but because there's nowhere else on Earth they'd rather be. The smoke, the noise, the brotherhood — that's not a job. That's a lifestyle.
+      </p>
+      <div class="nsl-block-third nsl-quote">
+        <p>"We know how to work hard. We play harder."</p>
+      </div>
     </div>
-
-    <p>
-      You don't need an invitation. You just need to show up. Whether you've got a stock daily or a built race car, the NSL Collective is open to anyone who does this out of love. Come join the community, meet the crew, and remind yourself why you got into cars in the first place.
-    </p>
-
-    <div style="display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;">
-      <a href="specialist.html" class="btn btn-red">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.07 13.6 19.79 19.79 0 01.01 5.06a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 10.1a16 16 0 006 6l.35-.35a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        Talk to the Builder
-      </a>
-      <a href="https://wa.me/17543648984?text=Hey!%20I%20want%20to%20learn%20more%20about%20the%20NSL%20Collective%20%F0%9F%94%A5"
-         target="_blank" rel="noopener" class="btn btn-outline-blue">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-        WhatsApp the Crew
-      </a>
-    </div>
-
-    <!-- Location callout -->
-    <div style="margin-top:4rem;padding:2rem;border:1px solid rgba(212,43,43,0.2);background:rgba(212,43,43,0.03);max-width:460px;margin-left:auto;margin-right:auto;">
-      <p style="font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.5rem;">Find Us</p>
-      <p style="font-family:var(--font-heading);font-size:1.2rem;color:var(--text-primary);margin-bottom:0.25rem;">BMW Service Miami</p>
-      <p style="font-size:0.88rem;color:var(--text-secondary);">2027 Grant St, Hollywood, FL 33020</p>
-      <p style="font-size:0.88rem;color:var(--text-secondary);">Mon–Sat &nbsp;·&nbsp; <span style="color:var(--bmw-blue);">(754) 364-8984</span></p>
-    </div>
+  </div>
+  <div class="nsl-block-photo">
+    <img src="assets/images/NSLCOLLECTIVE.JPG" alt="NSL Collective — the crew" loading="lazy" decoding="async"/>
   </div>
 </section>
 
 <!-- ====================================================
-     NSL SOCIAL STRIP
+     BLOCK 03 — THE INVITATION
      ==================================================== -->
-<div class="nsl-social">
-  <div class="container">
-    <p>Follow the Collective</p>
-    <div class="nsl-social-links">
-      <a href="https://www.instagram.com/bmw_service_miami" target="_blank" rel="noopener"
-         class="nsl-social-link red-border">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-        </svg>
-        @bmw_service_miami
-      </a>
-      <a href="https://www.facebook.com/bmwservicemiami" target="_blank" rel="noopener"
-         class="nsl-social-link blue-border">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-        </svg>
-        BMW Service Miami
-      </a>
+<section class="nsl-block" id="join">
+  <div class="nsl-block-text">
+    <div class="nsl-block-eyebrow">Join Us</div>
+    <div class="nsl-bigword">The <span class="accent">Invitation</span></div>
+    <div class="nsl-block-panel">
+      <h2 class="nsl-block-heading">Come <em>Slide</em> With Us.</h2>
+      <p class="nsl-block-desc">
+        You don't need an invitation — you just need to show up. Whether you've got a stock daily or a built race car, the NSL Collective is open to anyone who does this out of love. Come meet the crew and remind yourself why you got into cars in the first place.
+      </p>
+      <div class="nsl-block-third">
+        <a href="https://www.instagram.com/bmw_service_miami" target="_blank" rel="noopener" class="nsl-ig-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+          <span>@bmw_service_miami</span>
+          <span class="nsl-ig-arrow">&rarr;</span>
+        </a>
+      </div>
     </div>
   </div>
-</div>
+  <div class="nsl-block-photo">
+    <img src="assets/images/NLS!.jpg" alt="NSL Collective — come slide with us" loading="lazy" decoding="async"/>
+  </div>
+</section>
 
-<!-- Lightbox -->
-<div id="lightbox">
-  <div class="lightbox-content"></div>
-  <button class="lb-prev" aria-label="Previous">&#8592;</button>
-  <button class="lb-next" aria-label="Next">&#8594;</button>
-</div>
+<!-- ====================================================
+     CONTACT STRIP
+     ==================================================== -->
+<section class="nsl-contact">
+  <div class="nsl-contact-label">Find the Collective</div>
+  <h2>BMW Service Miami</h2>
+  <p class="nsl-contact-addr">
+    2027 Grant St, Hollywood, FL 33020<br>
+    Mon&ndash;Sat &nbsp;·&nbsp; <a href="tel:+17543648984">(754) 364-8984</a>
+  </p>
+  <div class="nsl-contact-socials">
+    <a href="https://www.instagram.com/bmw_service_miami" target="_blank" rel="noopener" class="nsl-btn nsl-btn-red">Instagram</a>
+    <a href="https://www.facebook.com/bmwservicemiami" target="_blank" rel="noopener" class="nsl-btn nsl-btn-ghost">Facebook</a>
+    <a href="https://wa.me/17543648984?text=Hey!%20I%20want%20to%20learn%20more%20about%20the%20NSL%20Collective" target="_blank" rel="noopener" class="nsl-btn nsl-btn-ghost">WhatsApp the Crew</a>
+  </div>
+</section>
 
 <!-- Footer -->
 <footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-copy">&copy; 2025 BMW Service Miami · NSL Collective · Hollywood, FL</div>
-      <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="media.html">Gallery</a></li>
-        <li><a href="community.html">NSL</a></li>
-        <li><a href="specialist.html">Contact</a></li>
-      </ul>
-      <div class="footer-credit">Built by <span>Xtatic Digital</span></div>
-    </div>
+  <div class="footer-inner">
+    <span>&copy; 2025 BMW Service Miami &middot; NSL Collective &middot; Hollywood, FL</span>
+    <span class="footer-credit">Built by Xtatic Digital</span>
   </div>
 </footer>
 
