@@ -80,12 +80,20 @@ a:hover { color: var(--red-bright); }
 
 /* --- NAVIGATION --- */
 #navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
   padding: 1.5rem 3rem;
+  transition: background 0.3s ease, padding 0.3s ease;
+}
+#navbar.scrolled {
+  background: rgba(0,0,0,0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 1rem 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .nav-inner {
   display: flex;
@@ -139,16 +147,20 @@ a:hover { color: var(--red-bright); }
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   cursor: pointer;
   z-index: 200;
 }
 .hamburger span {
-  width: 24px;
-  height: 1.5px;
-  background: #fff;
+  width: 26px;
+  height: 3px;
+  background: var(--red);
+  border-radius: 2px;
   transition: 0.3s;
 }
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px,6px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px,-6px); }
 
 /* --- HERO --- */
 .hero {
@@ -346,6 +358,9 @@ a:hover { color: var(--red-bright); }
   padding: 1.2rem 2rem;
   border-top: 1px solid rgba(255,255,255,0.06);
   transition: background 0.3s;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 .service-row:hover {
   background: rgba(192, 57, 43, 0.06);
@@ -701,27 +716,74 @@ footer {
    ============================================ */
 @media (max-width: 768px) {
 
-  /* Nav */
-  #navbar { padding: 1rem 1.5rem; }
+  /* Nav — fully transparent on mobile so only logo + burger float over content */
+  #navbar {
+    padding: 0.9rem 1.25rem;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: none;
+  }
+  #navbar.scrolled {
+    padding: 0.9rem 1.25rem;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: none;
+  }
+  .nav-logo-img {
+    height: 42px;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+  }
+  .hamburger span {
+    box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  }
+  .nav-line { display: none; }
+
   .nav-links {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.97);
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background: #000;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.25rem;
+    padding: 5rem 2rem 3rem;
+    margin: 0;
     z-index: 150;
+    overflow-y: auto;
   }
   .nav-links.open { display: flex; }
-  .nav-links a { font-size: 1rem; }
+  .nav-links li { list-style: none; }
+  .nav-links a {
+    font-size: 1.15rem;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.85);
+  }
+  .nav-links a.active { color: var(--red); }
   .hamburger { display: flex; }
 
-  /* Hero */
+  /* Hero — drop the absolute overlay (which floats over the car image)
+     and re-enable the .hero-intro block which sits BELOW the meta bar */
+  .hero-text-overlay { display: none; }
+  .hero-meta-bar {
+    padding: 1.1rem 1rem;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+  }
+  .hero-intro {
+    display: block;
+    padding: 2.5rem 1.5rem 3rem;
+  }
+  .hero-intro-desc {
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
   /* Services */
   .services-box {
     margin: 0 1rem;
