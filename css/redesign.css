@@ -399,18 +399,30 @@ a:hover { color: var(--red-bright); }
 }
 
 .service-sticker {
-  width: 180px;
-  height: auto;
+  width: 110px;
+  height: 110px;
   object-fit: contain;
   flex-shrink: 0;
-  opacity: 0.85;
-  margin-right: -2rem;
-  transition: opacity 0.3s, transform 0.3s;
+  opacity: 0.9;
+  margin-right: 0.5rem;
+  padding: 0 0.6rem;
+  transition: opacity 0.3s, transform 0.3s, filter 0.3s;
+}
+svg.service-sticker {
+  stroke-width: 1.2;
 }
 .service-row:hover .service-sticker {
   opacity: 1;
-  transform: scale(1.05);
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 12px currentColor);
 }
+
+/* BMW M palette — cycles across the service icons */
+.ico-red      { color: #E22718; }
+.ico-white    { color: #F6F6F6; }
+.ico-blue     { color: #1C69D4; }
+.ico-purple   { color: #8B3FA9; }
+.ico-darkblue { color: #0166B1; }
 
 /* Subsection headers */
 .service-subsection-header {
@@ -795,7 +807,7 @@ footer {
     gap: 0.8rem;
   }
   .service-info { gap: 1rem; }
-  .service-sticker { width: 100px; margin-right: -1.2rem; }
+  .service-sticker { width: 90px; height: 90px; margin-right: 0.2rem; padding: 0 0.3rem; }
   .services-title { font-size: 1.5rem; left: 1.2rem; }
 
   /* Reviews */
@@ -834,7 +846,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .service-sticker { width: 80px; }
+  .service-sticker { width: 70px; height: 70px; }
   .service-info h3 { font-size: 0.88rem; }
   .service-info p { font-size: 0.78rem; }
 }
