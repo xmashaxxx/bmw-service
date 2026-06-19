@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /preview-wa-
+Disallow: /preview-wb-
+Disallow: /preview-wc-
+
+Sitemap: https://bmwrepairshop.net/sitemap.xml
