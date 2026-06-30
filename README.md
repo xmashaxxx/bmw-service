@@ -1,0 +1,1 @@
+Website for BMW Service Miami, made with claude code. Designed on paper, came to life with peice by piece using clade code to create the vision come to life. Nano banana used to generate images, as well using editting skills to photoshop and design parts of the website. 
