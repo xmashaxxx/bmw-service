@@ -1,10 +1,10 @@
-# BMW Service Miami — Client Website
+# BMW Service Miami Client Website
 
 Production website built for and sold to **BMW Service Miami**, an independent BMW specialist repair shop in South Florida. Live at [bmwrepairshop.net](http://bmwrepairshop.net/).
 
 ## Project Context
 
-This was my first commercial web development sale — built as a deliberate experiment to validate whether I could deliver a professional client website end-to-end, from design through deployment. Sold for **$1,000** with no recurring monthly fee, intentionally underpriced to establish a real client relationship and prove the concept before scaling Xtatic Digital.
+This was my first commercial web development sale, built as a deliberate experiment to validate whether I could deliver a professional client website end-to-end, from design through deployment. 
 
 ## What Was Built
 
@@ -20,7 +20,7 @@ Three full design variants (wa, wb, wc) were developed and presented to the clie
 
 ## AI Discoverability — `llms.txt`
 
-The site includes an [`llms.txt`](llms.txt) file — a structured plain-text file that helps AI assistants (ChatGPT, Claude, Gemini, Perplexity) correctly surface the business when users ask questions like *"Where can I fix my BMW near Miami?"* or *"Best independent BMW mechanic in South Florida?"*
+The site includes an [`llms.txt`](llms.txt) file, a structured plain-text file that helps AI assistants (ChatGPT, Claude, Gemini, Perplexity) correctly surface the business when users ask questions like *"Where can I fix my BMW near Miami?"* or *"Best independent BMW mechanic in South Florida?"*
 
 This is a forward-looking SEO strategy: as more users query AI assistants instead of search engines, businesses without machine-readable context files risk being invisible to AI-generated recommendations. The `llms.txt` implementation here positions the shop to be discoverable through both traditional search and AI-assisted discovery.
 
@@ -38,6 +38,4 @@ This is a forward-looking SEO strategy: as more users query AI assistants instea
 
 Developed collaboratively with Claude Code (Anthropic) as AI pair programmer. Claude Code is visible as a co-contributor in the commit history.
 
----
 
-*Built by [Xtatic Digital](https://github.com/xmashaxxx/xsellera) · Web development and digital marketing for local businesses*
